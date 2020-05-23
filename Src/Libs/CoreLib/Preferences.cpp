@@ -33,28 +33,34 @@ Preferences::General::General()
 
 void Preferences::General::Load()
 {
-    pSettings->beginGroup(settingsPath_general);
-
-    textColor = (TextColor) pSettings->value(settingsPath_fillSolid, true).toInt();
-    if (textColor != TextColor::Black && textColor != TextColor::Grey && textColor != TextColor::Red)
+    if (pSettings)
     {
-        textColor = TextColor::Red;
-    }
+        pSettings->beginGroup(settingsPath_general);
 
-    pSettings->endGroup();
+        textColor = (TextColor)pSettings->value(settingsPath_fillSolid, true).toInt();
+        if (textColor != TextColor::Black && textColor != TextColor::Grey && textColor != TextColor::Red)
+        {
+            textColor = TextColor::Red;
+        }
+
+        pSettings->endGroup();
+    }
 }
 
 void Preferences::General::Save(const General& general)
 {
-    pSettings->beginGroup(settingsPath_general);
-
-    if (textColor != general.textColor)
+    if (pSettings)
     {
-        textColor = general.textColor;
-        pSettings->setValue(settingsPath_fillSolid, (int) textColor);
-    }
+        pSettings->beginGroup(settingsPath_general);
 
-    pSettings->endGroup();
+        if (textColor != general.textColor)
+        {
+            textColor = general.textColor;
+            pSettings->setValue(settingsPath_fillSolid, (int)textColor);
+        }
+
+        pSettings->endGroup();
+    }
 }
 
 ///////////////////////////////
@@ -69,22 +75,28 @@ Preferences::Library::Library()
 
 void Preferences::Library::Load()
 {
-    pSettings->beginGroup(settingsPath_library);
+    if (pSettings)
+    {
+        pSettings->beginGroup(settingsPath_library);
 
-    useStartsWith = pSettings->value(settingsPath_useStartsWith, true).toBool();
+        useStartsWith = pSettings->value(settingsPath_useStartsWith, true).toBool();
 
-    pSettings->endGroup();
+        pSettings->endGroup();
+    }
 }
 
 void Preferences::Library::Save(const Library& library)
 {
-    pSettings->beginGroup(settingsPath_library);
-
-    if (useStartsWith != library.useStartsWith)
+    if (pSettings)
     {
-        useStartsWith = library.useStartsWith;
-        pSettings->setValue(settingsPath_useStartsWith, useStartsWith);
-    }
+        pSettings->beginGroup(settingsPath_library);
 
-    pSettings->endGroup();
+        if (useStartsWith != library.useStartsWith)
+        {
+            useStartsWith = library.useStartsWith;
+            pSettings->setValue(settingsPath_useStartsWith, useStartsWith);
+        }
+
+        pSettings->endGroup();
+    }
 }

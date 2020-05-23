@@ -246,74 +246,76 @@ namespace Graphics
     {
         Rect trimRect(0, 0, _size.width, _size.height);
 
-        size_t first = 0;
-        for (; first < _pixels.size(); ++first)
+        if (_size.width && _size.height)
         {
-            if (_pixels[first].bgra.alpha != 0)
+            size_t first = 0;
+            for (; first < _pixels.size(); ++first)
             {
-                break;
-            }
-        }
-
-        if (first < _pixels.size())
-        {
-            size_t last = _pixels.size();
-
-            for (;;)
-            {
-                if (_pixels[--last].bgra.alpha != 0)
+                if (_pixels[first].bgra.alpha != 0)
                 {
                     break;
                 }
             }
 
-            const size_t topRow = first / _size.width;                       //-V104
-            const size_t bottomRow = (last + _size.width - 1) / _size.width; //-V104
-
-            const Pixel* pCurRow = _pixels.data() + (topRow * _size.width);    //-V104
-            const Pixel* pEndRow = _pixels.data() + (bottomRow * _size.width); //-V104
-
-            size_t leftMargin = _size.width; //-V101
-            size_t rightMargin = 0;
-
-            // Is it that much faster to do the above?
-
-            for (; pCurRow < pEndRow && !(leftMargin == 0 && rightMargin == static_cast<size_t>(_size.width));
-                 pCurRow += _size.width) //-V104 //-V102
+            if (first < _pixels.size())
             {
-                for (size_t col = 0; col < _size.width; ++col) //-V104
+                size_t last = _pixels.size();
+
+                for (;;)
                 {
-                    if (pCurRow[col].bgra.alpha != 0)
+                    if (_pixels[--last].bgra.alpha != 0)
                     {
-                        if (col < leftMargin)
+                        break;
+                    }
+                }
+
+                const size_t topRow = first / _size.width;                       //-V104
+                const size_t bottomRow = (last + _size.width - 1) / _size.width; //-V104
+
+                const Pixel* pCurRow = _pixels.data() + (topRow * _size.width);    //-V104
+                const Pixel* pEndRow = _pixels.data() + (bottomRow * _size.width); //-V104
+
+                size_t leftMargin = _size.width; //-V101
+                size_t rightMargin = 0;
+
+                // Is it that much faster to do the above?
+
+                for (; pCurRow < pEndRow && !(leftMargin == 0 && rightMargin == static_cast<size_t>(_size.width));
+                     pCurRow += _size.width) //-V104 //-V102
+                {
+                    for (size_t col = 0; col < _size.width; ++col) //-V104
+                    {
+                        if (pCurRow[col].bgra.alpha != 0)
                         {
-                            leftMargin = col;
+                            if (col < leftMargin)
+                            {
+                                leftMargin = col;
+                                break;
+                            }
+                        }
+                    }
+
+                    for (size_t col = _size.width; col;) //-V101
+                    {
+                        if (pCurRow[--col].bgra.alpha != 0)
+                        {
+                            if (col >= rightMargin)
+                            {
+                                rightMargin = col + 1;
+                            }
                             break;
                         }
                     }
                 }
 
-                for (size_t col = _size.width; col;) //-V101
-                {
-                    if (pCurRow[--col].bgra.alpha != 0)
-                    {
-                        if (col >= rightMargin)
-                        {
-                            rightMargin = col + 1;
-                        }
-                        break;
-                    }
-                }
+                // we can now calculate the left and width
+
+                trimRect.left   = static_cast<uint32_t>(leftMargin);
+                trimRect.width  = static_cast<uint32_t>(rightMargin - leftMargin);
+                trimRect.top    = static_cast<uint32_t>(topRow);
+                trimRect.height = static_cast<uint32_t>(bottomRow - topRow);
             }
-
-            // we can now calculate the left and width
-
-            trimRect.left   = static_cast<uint32_t>(leftMargin);
-            trimRect.width  = static_cast<uint32_t>(rightMargin - leftMargin);
-            trimRect.top    = static_cast<uint32_t>(topRow);
-            trimRect.height = static_cast<uint32_t>(bottomRow - topRow);
         }
-
         return trimRect;
     }
 

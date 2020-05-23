@@ -114,7 +114,7 @@ bool Arguments::GetValue(int& value, int defaultValue, bool mustHaveValue)
 QStringList Arguments::GetRemainingArgs() const
 {
     QStringList remainder;
-    for (int i = _curArg; _args.length() < i; i++)
+    for (int i = _curArg; i < _args.length(); ++i)
     {
         remainder.append(_args[i]);
     }

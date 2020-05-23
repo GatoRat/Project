@@ -19,7 +19,7 @@ string FastReadTextFileCpp(const ifstream& inStream)
 string FastReadTextFileCpp(const fs::path& pathname)
 {
     ifstream inStream(pathname);
-    return inStream.bad() ? string() : FastReadTextFileCpp(inStream);
+    return inStream.is_open() ? FastReadTextFileCpp(inStream) : string();
 }
 
 bool FastWriteTextFileCpp(const fs::path& pathname, string_view str)
@@ -27,7 +27,7 @@ bool FastWriteTextFileCpp(const fs::path& pathname, string_view str)
     bool success = false;
 
     ofstream outStream(pathname);
-    if (!outStream.bad())
+    if (outStream.is_open())
     {
         outStream << str;
         outStream.flush();
