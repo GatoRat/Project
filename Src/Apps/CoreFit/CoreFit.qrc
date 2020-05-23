@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="CoreFit">
+        <file>Resources/Images/about.png</file>
+        <file>Resources/Icons/folder_add.ico</file>
+        <file>Resources/Icons/folder_empty.ico</file>
+        <file>Resources/Icons/folder_full.ico</file>
+        <file>Resources/Icons/recycle_bin_empty.ico</file>
+        <file>Resources/Icons/recycle_bin_full.ico</file>
+        <file>Resources/Icons/show_all_empty.ico</file>
+        <file>Resources/Icons/show_all_full.ico</file>
+        <file>Resources/Icons/delete.ico</file>
+        <file>Resources/Icons/pending.ico</file>
+        <file>Resources/Icons/search.ico</file>
+        <file>Resources/Icons/view_as_icons.ico</file>
+        <file>Resources/Icons/view_as_list.ico</file>
+        <file>Resources/Icons/close.ico</file>
+        <file>Resources/Images/onlinestore.png</file>
+        <file>Resources/Images/BusyIndicator.gif</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,42 @@
+This list was gleaned from Microsoft documentation
+
+C4191 (level 3) 	'operator': unsafe conversion from 'type_of_expression' to 'type_required'
+C4263 (level 4) 	'function': member function does not override any base class virtual member function
+C4264 (level 1) 	'virtual_function': no override available for virtual member function from base 'class'; function is hidden
+C4266 (level 4) 	'function': no override available for virtual member function from base 'type'; function is hidden
+C4287 (level 3) 	'operator': unsigned/negative constant mismatch
+C4546 (level 1) 	function call before comma missing argument list
+
+C4355 	'this' : used in base member initializer list
+
+C4365 (level 4) 	'action': conversion from 'type_1' to 'type_2', signed/unsigned mismatch
+C4370 (level 3) 	layout of class has changed from a previous version of the compiler due to better packing
+C4371 (level 3) 	'classname': layout of class may have changed from a previous version of the compiler due to better packing of member 'member'
+C4388 (level 4) 	signed/unsigned mismatch
+
+C4571 (level 4) 	informational: catch(...) semantics changed since Visual C++ 7.1; structured exceptions (SEH) are no longer caught
+C4582 (level 4) 	'type': constructor is not implicitly called
+C4583 (level 4) 	'type': destructor is not implicitly called
+C4587 (level 1) 	'anonymous_structure': behavior change: constructor is no longer implicitly called
+C4588 (level 1) 	'anonymous_structure': behavior change: destructor is no longer implicitly called
+C4598 (level 1 and level 3) 	'#include "header"': header number number in the precompiled header does not match current compilation at that position
+C4599 (level 3) 	'option path': command-line argument number number does not match pre-compiled header
+
+C4605 (level 1) 	'/Dmacro' specified on current command line, but was not specified when precompiled header was built
+C4619 (level 3) 	#pragma warning: there is no warning number 'number'
+C4623 (level 4) 	'derived class': default constructor could not be generated because a base class default constructor is inaccessible
+C4626 (level 4) 	'derived class': assignment operator could not be generated because a base class assignment operator is inaccessible
+C4654 (level 4) 	Code placed before include of precompiled header line will be ignored. Add code to precompiled header.
+
+C4826 (level 2) 	Conversion from 'type1' to 'type2' is sign-extended. This may cause unexpected runtime behavior.
+C4841 (level 4) 	non-standard extension used: compound member designator used in offsetof
+C4842 (level 4) 	the result of 'offsetof' applied to a type using multiple inheritance is not guaranteed to be consistent between compiler releases
+C4868 (level 4) 	'file(line_number)' compiler may not enforce left-to-right evaluation order in braced initialization list
+
+C4928 (level 1) 	illegal copy-initialization; more than one user-defined conversion has been implicitly applied
+C4946 (level 1) 	reinterpret_cast used between related classes: 'class1' and 'class2'
+C4986 (level 4) 	'symbol': exception specification does not match previous declaration
+C4987 (level 4) 	nonstandard extension used: 'throw (...)'
+
+C5022 	'type': multiple move constructors specified
+C5023 	'type': multiple move assignment operators specified

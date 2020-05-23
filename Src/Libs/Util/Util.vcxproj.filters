@@ -1,0 +1,750 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Detect">
+      <UniqueIdentifier>{9b3d0db8-b698-4b51-a3a8-1ca87e6c6b88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="File">
+      <UniqueIdentifier>{79219f8c-99a2-4045-9e74-8bdbbd5d7b80}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="String">
+      <UniqueIdentifier>{ff33391e-f72f-4257-9e44-97cb7b9fedfb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System">
+      <UniqueIdentifier>{bea02548-f545-489d-8ec7-8cdf8c4cda06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Time">
+      <UniqueIdentifier>{8fc9afc1-59c5-40c6-9086-824750b2274b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Json">
+      <UniqueIdentifier>{98365b75-b155-48ea-bd50-cff1aa8d15ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Secure">
+      <UniqueIdentifier>{06d5c337-80f8-4b6b-be6f-d5f0ed229845}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphics">
+      <UniqueIdentifier>{084623f4-f91a-462f-851d-b800064505a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Math">
+      <UniqueIdentifier>{862df823-644c-4a17-a93b-86abe9253e87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Verify">
+      <UniqueIdentifier>{27796716-7131-473f-9244-586504bfcada}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Error">
+      <UniqueIdentifier>{499f752f-83df-4338-9188-29e5b868f743}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Misc">
+      <UniqueIdentifier>{79f289b3-f096-4327-a82a-6a22977800df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Log">
+      <UniqueIdentifier>{c5a4b937-d06a-4bbf-adc5-70fdb5afb36e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Log\Internal">
+      <UniqueIdentifier>{7df8b9f5-b4fe-4f33-91d7-7339ba17339f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System\Windows">
+      <UniqueIdentifier>{c91d19c5-95b0-4de5-b5dd-39f2c057a3dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Network">
+      <UniqueIdentifier>{a17c856a-46f6-44c5-9774-6e96268fa588}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Detect\DetectArchitecture.h">
+      <Filter>Detect</Filter>
+    </ClInclude>
+    <ClInclude Include="Detect\DetectCompiler.h">
+      <Filter>Detect</Filter>
+    </ClInclude>
+    <ClInclude Include="Detect\DetectEndianess.h">
+      <Filter>Detect</Filter>
+    </ClInclude>
+    <ClInclude Include="Detect\DetectEnv.h">
+      <Filter>Detect</Filter>
+    </ClInclude>
+    <ClInclude Include="Detect\DetectOperatingSystem.h">
+      <Filter>Detect</Filter>
+    </ClInclude>
+    <ClInclude Include="File\RenameBackupFiles.h">
+      <Filter>File</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\WICImage.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\WICImagingFactory.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="String\ASCII.h">
+      <Filter>String</Filter>
+    </ClInclude>
+    <ClInclude Include="String\constexpr_numeric_string.h">
+      <Filter>String</Filter>
+    </ClInclude>
+    <ClInclude Include="String\constexpr_string.h">
+      <Filter>String</Filter>
+    </ClInclude>
+    <ClInclude Include="String\Convert.h">
+      <Filter>String</Filter>
+    </ClInclude>
+    <ClInclude Include="String\FormatSize.h">
+      <Filter>String</Filter>
+    </ClInclude>
+    <ClInclude Include="String\FormatSizeFast.h">
+      <Filter>String</Filter>
+    </ClInclude>
+    <ClInclude Include="String\PlainStringBuilder.h">
+      <Filter>String</Filter>
+    </ClInclude>
+    <ClInclude Include="String\Str.h">
+      <Filter>String</Filter>
+    </ClInclude>
+    <ClInclude Include="System\SysInfo.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="Time\DateTime.h">
+      <Filter>Time</Filter>
+    </ClInclude>
+    <ClInclude Include="Time\Defines.Time.h">
+      <Filter>Time</Filter>
+    </ClInclude>
+    <ClInclude Include="Secure\Crc32c.h">
+      <Filter>Secure</Filter>
+    </ClInclude>
+    <ClInclude Include="Secure\Crc32cTable.h">
+      <Filter>Secure</Filter>
+    </ClInclude>
+    <ClInclude Include="Secure\SecureEraseMemory.h">
+      <Filter>Secure</Filter>
+    </ClInclude>
+    <ClInclude Include="String\predicates.h">
+      <Filter>String</Filter>
+    </ClInclude>
+    <ClInclude Include="File\StdioFile.h">
+      <Filter>File</Filter>
+    </ClInclude>
+    <ClInclude Include="Json\JsonGet.h">
+      <Filter>Json</Filter>
+    </ClInclude>
+    <ClInclude Include="Json\JsonGetEx.h">
+      <Filter>Json</Filter>
+    </ClInclude>
+    <ClInclude Include="Json\JsonGetOptional.h">
+      <Filter>Json</Filter>
+    </ClInclude>
+    <ClInclude Include="Json\XceptionJson.h">
+      <Filter>Json</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\Graphics.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\Trig.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\Almost.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\CalcScale.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="File\FastFile.h">
+      <Filter>File</Filter>
+    </ClInclude>
+    <ClInclude Include="Secure\Crc32.h">
+      <Filter>Secure</Filter>
+    </ClInclude>
+    <ClInclude Include="Verify\VerifyFormat.Sound.h">
+      <Filter>Verify</Filter>
+    </ClInclude>
+    <ClInclude Include="Verify\VerifyFormat.Image.h">
+      <Filter>Verify</Filter>
+    </ClInclude>
+    <ClInclude Include="String\SplitText.h">
+      <Filter>String</Filter>
+    </ClInclude>
+    <ClInclude Include="String\GetNumDigits.h">
+      <Filter>String</Filter>
+    </ClInclude>
+    <ClInclude Include="Misc\AppInfo.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Misc\ByteOrder.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Misc\ComInitialize.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Misc\CommandLine.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Misc\ConsoleColor.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Misc\countof.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Misc\Defines.Misc.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Misc\Finally.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Misc\MakeFourCC.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Misc\TimedTest.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Error\OsError.h">
+      <Filter>Error</Filter>
+    </ClInclude>
+    <ClInclude Include="Error\Xception.h">
+      <Filter>Error</Filter>
+    </ClInclude>
+    <ClInclude Include="Error\XceptionT.h">
+      <Filter>Error</Filter>
+    </ClInclude>
+    <ClInclude Include="Error\ErrString.h">
+      <Filter>Error</Filter>
+    </ClInclude>
+    <ClInclude Include="System\_lean_windows_.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="File\XceptionFile.h">
+      <Filter>File</Filter>
+    </ClInclude>
+    <ClInclude Include="File\XceptionFileT.h">
+      <Filter>File</Filter>
+    </ClInclude>
+    <ClInclude Include="File\CheckUtf8Marker.h">
+      <Filter>File</Filter>
+    </ClInclude>
+    <ClInclude Include="File\CsvFile.h">
+      <Filter>File</Filter>
+    </ClInclude>
+    <ClInclude Include="File\CsvCell.h">
+      <Filter>File</Filter>
+    </ClInclude>
+    <ClInclude Include="String\Money.h">
+      <Filter>String</Filter>
+    </ClInclude>
+    <ClInclude Include="Secure\SHA-256.h">
+      <Filter>Secure</Filter>
+    </ClInclude>
+    <ClInclude Include="Time\ParseDate.h">
+      <Filter>Time</Filter>
+    </ClInclude>
+    <ClInclude Include="File\IsValidFilenameChar.h">
+      <Filter>File</Filter>
+    </ClInclude>
+    <ClInclude Include="Misc\LocaleUtil.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Secure\AES.h">
+      <Filter>Secure</Filter>
+    </ClInclude>
+    <ClInclude Include="Secure\SecureBuffer.h">
+      <Filter>Secure</Filter>
+    </ClInclude>
+    <ClInclude Include="Misc\SafeQueue.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Json\JsonGetOptionalEx.h">
+      <Filter>Json</Filter>
+    </ClInclude>
+    <ClInclude Include="Misc\WaitEvent.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="System\DirChange.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="System\FileChange.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="Time\TimeStamp.h">
+      <Filter>Time</Filter>
+    </ClInclude>
+    <ClInclude Include="Json\JsonWriter.h">
+      <Filter>Json</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\Random.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="File\PathPredicates.h">
+      <Filter>File</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\RoundUp.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\Image.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="File\FileHelper.h">
+      <Filter>File</Filter>
+    </ClInclude>
+    <ClInclude Include="File\SuperBasicFile.h">
+      <Filter>File</Filter>
+    </ClInclude>
+    <ClInclude Include="File\FastFindFile.h">
+      <Filter>File</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\FastRand.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Json\JsonFormatError.h">
+      <Filter>Json</Filter>
+    </ClInclude>
+    <ClInclude Include="Secure\AES_GCM.h">
+      <Filter>Secure</Filter>
+    </ClInclude>
+    <ClInclude Include="String\StrSplit.h">
+      <Filter>String</Filter>
+    </ClInclude>
+    <ClInclude Include="System\NetworkHelper.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\SpriteSheet.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Json\JsonFile.h">
+      <Filter>Json</Filter>
+    </ClInclude>
+    <ClInclude Include="Json\JsonStringHandler.h">
+      <Filter>Json</Filter>
+    </ClInclude>
+    <ClInclude Include="Json\JsonPath.h">
+      <Filter>Json</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\BounceScaler.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\RoundToNearest.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Secure\AES_GCM.Win32.h">
+      <Filter>Secure</Filter>
+    </ClInclude>
+    <ClInclude Include="Secure\AES_GCM.OpenSSL.h">
+      <Filter>Secure</Filter>
+    </ClInclude>
+    <ClInclude Include="Time\TimeStampQueue.h">
+      <Filter>Time</Filter>
+    </ClInclude>
+    <ClInclude Include="Time\TimerQueue.h">
+      <Filter>Time</Filter>
+    </ClInclude>
+    <ClInclude Include="Time\Scheduler.h">
+      <Filter>Time</Filter>
+    </ClInclude>
+    <ClInclude Include="System\SysTime.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="String\ASCIIW.h">
+      <Filter>String</Filter>
+    </ClInclude>
+    <ClInclude Include="String\ConvertW.h">
+      <Filter>String</Filter>
+    </ClInclude>
+    <ClInclude Include="Log\Log.h">
+      <Filter>Log</Filter>
+    </ClInclude>
+    <ClInclude Include="Log\LogStream.h">
+      <Filter>Log</Filter>
+    </ClInclude>
+    <ClInclude Include="Log\Internal\Logger.h">
+      <Filter>Log\Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="Log\Internal\SpamLimiter.h">
+      <Filter>Log\Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="Misc\Semaphore.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Secure\CryptGenRandom.h">
+      <Filter>Secure</Filter>
+    </ClInclude>
+    <ClInclude Include="Secure\CryptGenRandom.OpenSSL.h">
+      <Filter>Secure</Filter>
+    </ClInclude>
+    <ClInclude Include="Secure\CryptGenRandom.Win32.h">
+      <Filter>Secure</Filter>
+    </ClInclude>
+    <ClInclude Include="Secure\CryptHashPassword.h">
+      <Filter>Secure</Filter>
+    </ClInclude>
+    <ClInclude Include="Secure\CryptHashPassword.OpenSSL.h">
+      <Filter>Secure</Filter>
+    </ClInclude>
+    <ClInclude Include="Secure\CryptSha.OpenSSL.h">
+      <Filter>Secure</Filter>
+    </ClInclude>
+    <ClInclude Include="Secure\CryptSha.h">
+      <Filter>Secure</Filter>
+    </ClInclude>
+    <ClInclude Include="System\Windows\WinHandle.h">
+      <Filter>System\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="System\Windows\WinReportError.h">
+      <Filter>System\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="System\Windows\WinServiceHandle.h">
+      <Filter>System\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="System\Windows\WinConsoleGetChar.h">
+      <Filter>System\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="System\SingleInstance.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="System\SysGetPath.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="System\Windows\WinService.h">
+      <Filter>System\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="Time\Stopwatch.h">
+      <Filter>Time</Filter>
+    </ClInclude>
+    <ClInclude Include="Secure\SecureContainerOrg.h">
+      <Filter>Secure</Filter>
+    </ClInclude>
+    <ClInclude Include="Secure\SecureContainer.h">
+      <Filter>Secure</Filter>
+    </ClInclude>
+    <ClInclude Include="Misc\SafeQueueWaitable.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Secure\ArrayString.h">
+      <Filter>Secure</Filter>
+    </ClInclude>
+    <ClInclude Include="Misc\IsBufferEmpty.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="String\Base64.h">
+      <Filter>String</Filter>
+    </ClInclude>
+    <ClInclude Include="Json\JsonReadArray.h">
+      <Filter>Json</Filter>
+    </ClInclude>
+    <ClInclude Include="Json\JsonTimeStamp.h">
+      <Filter>Json</Filter>
+    </ClInclude>
+    <ClInclude Include="System\FormatNumber.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="System\Windows\WinThread.h">
+      <Filter>System\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="System\Windows\WinSafeQueue.h">
+      <Filter>System\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="Json\JsonGetBlobEx.h">
+      <Filter>Json</Filter>
+    </ClInclude>
+    <ClInclude Include="File\TempFolder.h">
+      <Filter>File</Filter>
+    </ClInclude>
+    <ClInclude Include="File\GetPath.h">
+      <Filter>File</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\TcpSocket.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Json\JsonGetEx2.h">
+      <Filter>Json</Filter>
+    </ClInclude>
+    <ClInclude Include="Json\JsonGetOptionalEx3a.h">
+      <Filter>Json</Filter>
+    </ClInclude>
+    <ClInclude Include="Json\Json.h">
+      <Filter>Json</Filter>
+    </ClInclude>
+    <ClInclude Include="Json\JsonMessage.h">
+      <Filter>Json</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="File\RenameBackupFiles.cpp">
+      <Filter>File</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\WICImage.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\WICImagingFactory.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="String\Convert.cpp">
+      <Filter>String</Filter>
+    </ClCompile>
+    <ClCompile Include="String\ConvertNumber.cpp">
+      <Filter>String</Filter>
+    </ClCompile>
+    <ClCompile Include="String\FormatSize.cpp">
+      <Filter>String</Filter>
+    </ClCompile>
+    <ClCompile Include="String\FormatSizeFast.cpp">
+      <Filter>String</Filter>
+    </ClCompile>
+    <ClCompile Include="String\PlainStringBuilder.cpp">
+      <Filter>String</Filter>
+    </ClCompile>
+    <ClCompile Include="String\Str.cpp">
+      <Filter>String</Filter>
+    </ClCompile>
+    <ClCompile Include="System\SysInfo.Windows.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="Time\DateTime.cpp">
+      <Filter>Time</Filter>
+    </ClCompile>
+    <ClCompile Include="Secure\Crc32c.cpp">
+      <Filter>Secure</Filter>
+    </ClCompile>
+    <ClCompile Include="Secure\SecureEraseMemory.cpp">
+      <Filter>Secure</Filter>
+    </ClCompile>
+    <ClCompile Include="File\StdioFile.cpp">
+      <Filter>File</Filter>
+    </ClCompile>
+    <ClCompile Include="Json\XceptionJson.cpp">
+      <Filter>Json</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\Graphics.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\CalcScale.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="File\FastFile.cpp">
+      <Filter>File</Filter>
+    </ClCompile>
+    <ClCompile Include="Secure\Crc32.cpp">
+      <Filter>Secure</Filter>
+    </ClCompile>
+    <ClCompile Include="Verify\VerifyFormat.Sound.cpp">
+      <Filter>Verify</Filter>
+    </ClCompile>
+    <ClCompile Include="Verify\VerifyFormat.Image.cpp">
+      <Filter>Verify</Filter>
+    </ClCompile>
+    <ClCompile Include="String\SplitText.cpp">
+      <Filter>String</Filter>
+    </ClCompile>
+    <ClCompile Include="Misc\AppInfo.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="Misc\ComInitialize.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="Misc\CommandLine.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="Misc\TimedTest.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="Error\OsError.cpp">
+      <Filter>Error</Filter>
+    </ClCompile>
+    <ClCompile Include="Error\Xception.cpp">
+      <Filter>Error</Filter>
+    </ClCompile>
+    <ClCompile Include="Error\ErrString.cpp">
+      <Filter>Error</Filter>
+    </ClCompile>
+    <ClCompile Include="File\CheckUtf8Marker.cpp">
+      <Filter>File</Filter>
+    </ClCompile>
+    <ClCompile Include="File\CsvFile.cpp">
+      <Filter>File</Filter>
+    </ClCompile>
+    <ClCompile Include="File\CsvCell.cpp">
+      <Filter>File</Filter>
+    </ClCompile>
+    <ClCompile Include="String\Money.cpp">
+      <Filter>String</Filter>
+    </ClCompile>
+    <ClCompile Include="Secure\SHA-256.cpp">
+      <Filter>Secure</Filter>
+    </ClCompile>
+    <ClCompile Include="Time\ParseDate.cpp">
+      <Filter>Time</Filter>
+    </ClCompile>
+    <ClCompile Include="File\IsValidFilenameChar.cpp">
+      <Filter>File</Filter>
+    </ClCompile>
+    <ClCompile Include="Misc\LocaleUtil.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="Secure\AES.cpp">
+      <Filter>Secure</Filter>
+    </ClCompile>
+    <ClCompile Include="Misc\WaitEvent.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="System\DirChange.Windows.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="System\FileChange.Windows.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="Time\TimeStamp.cpp">
+      <Filter>Time</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\Random.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\Image.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="File\FileHelper.cpp">
+      <Filter>File</Filter>
+    </ClCompile>
+    <ClCompile Include="File\FastFileFind.cpp">
+      <Filter>File</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\FastRand.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Json\JsonFormatError.cpp">
+      <Filter>Json</Filter>
+    </ClCompile>
+    <ClCompile Include="Secure\AES_GCM.cpp">
+      <Filter>Secure</Filter>
+    </ClCompile>
+    <ClCompile Include="String\StrSplit.cpp">
+      <Filter>String</Filter>
+    </ClCompile>
+    <ClCompile Include="System\NetworkHelper.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\SpriteSheet.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Json\JsonFile.cpp">
+      <Filter>Json</Filter>
+    </ClCompile>
+    <ClCompile Include="Json\JsonPath.cpp">
+      <Filter>Json</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\BounceScaler.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Secure\AES_GCM.Win32.cpp">
+      <Filter>Secure</Filter>
+    </ClCompile>
+    <ClCompile Include="Secure\AES_GCM.OpenSSL.cpp">
+      <Filter>Secure</Filter>
+    </ClCompile>
+    <ClCompile Include="Time\TimeStampQueue.cpp">
+      <Filter>Time</Filter>
+    </ClCompile>
+    <ClCompile Include="Time\TimerQueue.cpp">
+      <Filter>Time</Filter>
+    </ClCompile>
+    <ClCompile Include="Time\Scheduler.cpp">
+      <Filter>Time</Filter>
+    </ClCompile>
+    <ClCompile Include="System\SysTime.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="System\SysGetPath.Windows.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="String\ConvertW.cpp">
+      <Filter>String</Filter>
+    </ClCompile>
+    <ClCompile Include="Log\Log.cpp">
+      <Filter>Log</Filter>
+    </ClCompile>
+    <ClCompile Include="Log\LogStream.cpp">
+      <Filter>Log</Filter>
+    </ClCompile>
+    <ClCompile Include="Log\Internal\Logger.cpp">
+      <Filter>Log\Internal</Filter>
+    </ClCompile>
+    <ClCompile Include="Log\Internal\SpamLimiter.cpp">
+      <Filter>Log\Internal</Filter>
+    </ClCompile>
+    <ClCompile Include="Secure\CryptGenRandom.cpp">
+      <Filter>Secure</Filter>
+    </ClCompile>
+    <ClCompile Include="Secure\CryptGenRandom.OpenSSL.cpp">
+      <Filter>Secure</Filter>
+    </ClCompile>
+    <ClCompile Include="Secure\CryptGenRandom.Win32.cpp">
+      <Filter>Secure</Filter>
+    </ClCompile>
+    <ClCompile Include="Secure\CryptHashPassword.cpp">
+      <Filter>Secure</Filter>
+    </ClCompile>
+    <ClCompile Include="Secure\CryptHashPassword.OpenSSL.cpp">
+      <Filter>Secure</Filter>
+    </ClCompile>
+    <ClCompile Include="Secure\CryptSha.OpenSSL.cpp">
+      <Filter>Secure</Filter>
+    </ClCompile>
+    <ClCompile Include="Secure\CryptSha.cpp">
+      <Filter>Secure</Filter>
+    </ClCompile>
+    <ClCompile Include="System\SingleInstance.Windows.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="System\Windows\WinHandle.cpp">
+      <Filter>System\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="System\Windows\WinReportError.cpp">
+      <Filter>System\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="System\Windows\WinServiceHandle.cpp">
+      <Filter>System\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="System\Windows\WinConsoleGetChar.cpp">
+      <Filter>System\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="System\Windows\WinService.cpp">
+      <Filter>System\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Time\Stopwatch.cpp">
+      <Filter>Time</Filter>
+    </ClCompile>
+    <ClCompile Include="File\SuperBasicFile.Win32.cpp">
+      <Filter>File</Filter>
+    </ClCompile>
+    <ClCompile Include="Secure\SecureContainerOrg.cpp">
+      <Filter>Secure</Filter>
+    </ClCompile>
+    <ClCompile Include="Secure\SecureContainer.cpp">
+      <Filter>Secure</Filter>
+    </ClCompile>
+    <ClCompile Include="String\Base64.cpp">
+      <Filter>String</Filter>
+    </ClCompile>
+    <ClCompile Include="Json\JsonReadArray.cpp">
+      <Filter>Json</Filter>
+    </ClCompile>
+    <ClCompile Include="System\SysTime.Windows.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="System\FormatNumber.Windows.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="System\Windows\WinThread.cpp">
+      <Filter>System\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="String\ConvertNumberW.cpp">
+      <Filter>String</Filter>
+    </ClCompile>
+    <ClCompile Include="File\TempFolder.cpp">
+      <Filter>File</Filter>
+    </ClCompile>
+    <ClCompile Include="File\GetPath.cpp">
+      <Filter>File</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\TcpSocket.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Json\JsonGetOptionalEx3a.cpp">
+      <Filter>Json</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

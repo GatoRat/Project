@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="TestHelper.Buffer.h" />
+    <ClInclude Include="TestHelper.TmpDir.h" />
+    <ClInclude Include="TestHelper.TmpFile.h" />
+    <ClInclude Include="TestGlobalSetup.h" />
+    <ClInclude Include="catch.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="TestHelper.Buffer.cpp" />
+    <ClCompile Include="TestHelper.TmpDir.cpp" />
+    <ClCompile Include="TestHelper.TmpFile.cpp" />
+    <ClCompile Include="TestHelper.main.cpp" />
+  </ItemGroup>
+</Project>

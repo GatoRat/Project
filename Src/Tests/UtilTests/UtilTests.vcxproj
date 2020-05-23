@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{F0E7E99E-F600-45B8-9732-B1C70DA3BD9C}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>UtilTests</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)Build\Win64\$(Configuration)\bin\</OutDir>
+    <IntDir>$(SolutionDir)Build\Win64\$(Configuration)\$(ProjectName)\</IntDir>
+    <CodeAnalysisRuleSet>$(SolutionDir)Src\Analysis.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)Build\Win64\$(Configuration)\bin\</OutDir>
+    <IntDir>$(SolutionDir)Build\Win64\$(Configuration)\$(ProjectName)\</IntDir>
+    <CodeAnalysisRuleSet>$(SolutionDir)Src\Analysis.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <WarningLevel>Level4</WarningLevel>
+      <DisableSpecificWarnings>4201;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <TreatSpecificWarningsAsErrors>4265;4289;4296;4431;4545;4547;4548;4549;4555;4905;4906;5038;%(TreatSpecificWarningsAsErrors)</TreatSpecificWarningsAsErrors>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;WIN32_LEAN_AND_MEAN;NOMINMAX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(SolutionDir)Src\Tests;$(SolutionDir)Src\Libs;$(SolutionDir)ThirdParty</AdditionalIncludeDirectories>
+      <MinimalRebuild>false</MinimalRebuild>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <TreatWarningAsError>true</TreatWarningAsError>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>DebugFastLink</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)ThirdParty\OpenSSL\lib</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <WarningLevel>Level4</WarningLevel>
+      <DisableSpecificWarnings>4201;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <TreatSpecificWarningsAsErrors>4265;4289;4296;4431;4545;4547;4548;4549;4555;4905;4906;5038;%(TreatSpecificWarningsAsErrors)</TreatSpecificWarningsAsErrors>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;WIN32_LEAN_AND_MEAN;NOMINMAX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(SolutionDir)Src\Tests;$(SolutionDir)Src\Libs;$(SolutionDir)ThirdParty</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <TreatWarningAsError>true</TreatWarningAsError>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>DebugFastLink</GenerateDebugInformation>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <AdditionalLibraryDirectories>$(SolutionDir)ThirdParty\OpenSSL\lib</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Error\ErrString.tests.cpp" />
+    <ClCompile Include="Error\Xception.tests.cpp" />
+    <ClCompile Include="File\CheckUtf8Marker.tests.cpp" />
+    <ClCompile Include="File\CsvCell.tests.cpp" />
+    <ClCompile Include="File\CsvFile.tests.cpp" />
+    <ClCompile Include="File\FastFile.tests.cpp" />
+    <ClCompile Include="File\RenameBackupFiles.tests.cpp" />
+    <ClCompile Include="File\StdioFile.tests.cpp" />
+    <ClCompile Include="Graphics\Graphics.tests.cpp" />
+    <ClCompile Include="Graphics\WICImage.tests.cpp" />
+    <ClCompile Include="Json\JsonGet.tests.cpp" />
+    <ClCompile Include="Json\JsonPath.tests.cpp" />
+    <ClCompile Include="Log\Internal\SpamLimiter.tests.cpp" />
+    <ClCompile Include="Math\Almost.tests.cpp" />
+    <ClCompile Include="Math\CalcScale.tests.cpp" />
+    <ClCompile Include="Math\Random.tests.cpp" />
+    <ClCompile Include="Math\RoundToNearest.tests.cpp" />
+    <ClCompile Include="Math\RoundUp.tests.cpp" />
+    <ClCompile Include="Math\Trig.tests.cpp" />
+    <ClCompile Include="Misc\AppInfo.tests.cpp" />
+    <ClCompile Include="Misc\ByteOrder.tests.cpp" />
+    <ClCompile Include="Misc\ComInitialize.tests.cpp" />
+    <ClCompile Include="Misc\countof.tests.cpp" />
+    <ClCompile Include="Misc\MakeFourCC.tests.cpp" />
+    <ClCompile Include="Secure\AES.tests.cpp" />
+    <ClCompile Include="Secure\AES_GCM.tests.cpp" />
+    <ClCompile Include="Secure\ArrayString.tests.cpp" />
+    <ClCompile Include="Secure\Crc32.tests.cpp" />
+    <ClCompile Include="Secure\Crc32c.tests.cpp" />
+    <ClCompile Include="Secure\CryptGenRandom.tests.cpp" />
+    <ClCompile Include="Secure\CryptHashPassword.tests.cpp" />
+    <ClCompile Include="Secure\IsBufferEmpty.tests.cpp" />
+    <ClCompile Include="Secure\SecureBuffer.tests.cpp" />
+    <ClCompile Include="Secure\SecureContainer.tests.cpp" />
+    <ClCompile Include="Secure\SHA-256.tests.cpp" />
+    <ClCompile Include="String\ASCII.tests.cpp" />
+    <ClCompile Include="String\Base64.tests.cpp" />
+    <ClCompile Include="String\Convert.tests.cpp" />
+    <ClCompile Include="String\ConvertNumber.tests.cpp" />
+    <ClCompile Include="String\ConvertNumberW.tests.cpp" />
+    <ClCompile Include="String\FormatSize.tests.cpp" />
+    <ClCompile Include="String\GetNumDigits.tests.cpp" />
+    <ClCompile Include="String\Money.tests.cpp" />
+    <ClCompile Include="String\Predicates.tests.cpp" />
+    <ClCompile Include="String\PlainStringBuilder.tests.cpp" />
+    <ClCompile Include="String\SplitText.tests.cpp" />
+    <ClCompile Include="String\Str.tests.cpp" />
+    <ClCompile Include="String\StrSplit.tests.cpp" />
+    <ClCompile Include="SysInfo\DirChange.tests.cpp" />
+    <ClCompile Include="SysInfo\SysInfo.tests.cpp" />
+    <ClCompile Include="Time\DateTime.tests.cpp" />
+    <ClCompile Include="Time\ParseDate.tests.cpp" />
+    <ClCompile Include="Time\Schedule.tests.cpp" />
+    <ClCompile Include="Time\TimeStamp.tests.cpp" />
+    <ClCompile Include="UtilTests.GlobalSetup.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\ThirdParty\lz4\lz4.vcxproj">
+      <Project>{8223a9c4-8424-4f63-9cd0-af9b603713dd}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libs\Util\Util.vcxproj">
+      <Project>{851e38b1-8af4-4ccc-a90d-3491c66a2259}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\TestHelper\TestHelper.vcxproj">
+      <Project>{d2620090-3ad5-4d2e-849a-d6668ba228c8}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

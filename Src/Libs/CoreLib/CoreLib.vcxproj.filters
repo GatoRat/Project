@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>moc;h;cpp</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Database">
+      <UniqueIdentifier>{20052f6d-cd06-4c27-8711-05822a64aaa7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="QSettingsPlus.cpp" />
+    <ClCompile Include="Preferences.cpp" />
+    <ClCompile Include="Arguments.cpp" />
+    <ClCompile Include="ErrCode.cpp" />
+    <ClCompile Include="QGetPath.cpp" />
+    <ClCompile Include="Database\MakeKeywordQuery.cpp">
+      <Filter>Database</Filter>
+    </ClCompile>
+    <ClCompile Include="Database\Database.cpp">
+      <Filter>Database</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Arguments.h" />
+    <ClInclude Include="Preferences.h" />
+    <ClInclude Include="QSettingsPlus.h" />
+    <ClInclude Include="StreamBlock.h" />
+    <ClInclude Include="ErrCode.h" />
+    <ClInclude Include="QGetPath.h" />
+    <ClInclude Include="Database\MakeKeywordQuery.h">
+      <Filter>Database</Filter>
+    </ClInclude>
+    <ClInclude Include="Database\Database.h">
+      <Filter>Database</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

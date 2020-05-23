@@ -1,0 +1,13 @@
+#
+# global ignore file:  "c:\Users\{user}\Documents\gitignore_global.txt"
+#
+
+~*
+.vs
+Build
+*.vcxproj.user
+!CoreFit.vcxproj.user
+!AppExp.vcxproj.user
+!QtExp.vcxproj.user
+.aps
+

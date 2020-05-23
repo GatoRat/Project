@@ -1,0 +1,27 @@
+Turn off:
+
+4201 // nonstandard extension used : nameless struct/union
+
+Turn on (as errors):
+
+4265 // class has virtual functions, but destructor is not virtual
+4289 // loop control variable declared in the for-loop is used outside the for-loop scope
+4296 // expression is always false
+4431 // missing type specifier - int assumed.
+4545 // expression before comma evaluates to a function which is missing an argument list
+4547 // operator before comma has no effect; expected operator with side-effect
+4548 // expression before comma has no effect; expected expression with side-effect
+4549 // operator before comma has no effect; did you intend 'operator'?
+4555 // expression has no effect; expected expression with side-effec
+4905 // wide string literal cast to 'LPSTR'
+4906 // string literal cast to 'LPWSTR'
+5038 // order of initialization in initializer lists
+
+Possibly turn on locally: (Turning these on globally will drive you crazy!)
+
+#pragma warning(error : 4061) // enumerator 'identifier' in switch of enum 'enumeration' is not explicitly handled by a case label
+#pragma warning(error : 4062) // enumerator 'identifier' in switch of enum 'enumeration' is not handled
+
+Possibly turn off locally (in test code):
+
+4748 // /GS can not protect parameters and local variables from local buffer overrun because optimizations are disabled in function

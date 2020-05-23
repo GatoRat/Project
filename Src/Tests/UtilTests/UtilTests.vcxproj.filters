@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Time\DateTime.tests.cpp">
+      <Filter>time</Filter>
+    </ClCompile>
+    <ClCompile Include="Misc\countof.tests.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="Secure\Crc32c.tests.cpp">
+      <Filter>Secure</Filter>
+    </ClCompile>
+    <ClCompile Include="SysInfo\SysInfo.tests.cpp">
+      <Filter>SysInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="String\ASCII.tests.cpp">
+      <Filter>string</Filter>
+    </ClCompile>
+    <ClCompile Include="String\Convert.tests.cpp">
+      <Filter>string</Filter>
+    </ClCompile>
+    <ClCompile Include="String\FormatSize.tests.cpp">
+      <Filter>string</Filter>
+    </ClCompile>
+    <ClCompile Include="String\PlainStringBuilder.tests.cpp">
+      <Filter>string</Filter>
+    </ClCompile>
+    <ClCompile Include="String\Str.tests.cpp">
+      <Filter>string</Filter>
+    </ClCompile>
+    <ClCompile Include="String\Predicates.tests.cpp">
+      <Filter>string</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\Graphics.tests.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\WICImage.tests.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Misc\MakeFourCC.tests.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="UtilTests.GlobalSetup.cpp" />
+    <ClCompile Include="Math\Trig.tests.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\CalcScale.tests.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\Almost.tests.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="File\StdioFile.tests.cpp">
+      <Filter>File</Filter>
+    </ClCompile>
+    <ClCompile Include="Secure\Crc32.tests.cpp">
+      <Filter>Secure</Filter>
+    </ClCompile>
+    <ClCompile Include="Misc\ByteOrder.tests.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="String\SplitText.tests.cpp">
+      <Filter>String</Filter>
+    </ClCompile>
+    <ClCompile Include="String\GetNumDigits.tests.cpp">
+      <Filter>String</Filter>
+    </ClCompile>
+    <ClCompile Include="Misc\AppInfo.tests.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="Misc\ComInitialize.tests.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="Error\Xception.tests.cpp">
+      <Filter>Error</Filter>
+    </ClCompile>
+    <ClCompile Include="File\CheckUtf8Marker.tests.cpp">
+      <Filter>File</Filter>
+    </ClCompile>
+    <ClCompile Include="File\CsvFile.tests.cpp">
+      <Filter>File</Filter>
+    </ClCompile>
+    <ClCompile Include="File\CsvCell.tests.cpp">
+      <Filter>File</Filter>
+    </ClCompile>
+    <ClCompile Include="String\Money.tests.cpp">
+      <Filter>String</Filter>
+    </ClCompile>
+    <ClCompile Include="Secure\SHA-256.tests.cpp">
+      <Filter>Secure</Filter>
+    </ClCompile>
+    <ClCompile Include="Time\ParseDate.tests.cpp">
+      <Filter>Time</Filter>
+    </ClCompile>
+    <ClCompile Include="Secure\AES.tests.cpp">
+      <Filter>Secure</Filter>
+    </ClCompile>
+    <ClCompile Include="Secure\SecureBuffer.tests.cpp">
+      <Filter>Secure</Filter>
+    </ClCompile>
+    <ClCompile Include="String\ConvertNumber.tests.cpp">
+      <Filter>String</Filter>
+    </ClCompile>
+    <ClCompile Include="File\RenameBackupFiles.tests.cpp">
+      <Filter>File</Filter>
+    </ClCompile>
+    <ClCompile Include="SysInfo\DirChange.tests.cpp">
+      <Filter>SysInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="Time\TimeStamp.tests.cpp">
+      <Filter>Time</Filter>
+    </ClCompile>
+    <ClCompile Include="File\FastFile.tests.cpp">
+      <Filter>File</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\Random.tests.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Secure\SecureContainer.tests.cpp">
+      <Filter>Secure</Filter>
+    </ClCompile>
+    <ClCompile Include="Json\JsonGet.tests.cpp">
+      <Filter>Json</Filter>
+    </ClCompile>
+    <ClCompile Include="Secure\AES_GCM.tests.cpp">
+      <Filter>Secure</Filter>
+    </ClCompile>
+    <ClCompile Include="String\StrSplit.tests.cpp">
+      <Filter>String</Filter>
+    </ClCompile>
+    <ClCompile Include="Json\JsonPath.tests.cpp">
+      <Filter>Json</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\RoundUp.tests.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\RoundToNearest.tests.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Time\Schedule.tests.cpp">
+      <Filter>Time</Filter>
+    </ClCompile>
+    <ClCompile Include="Log\Internal\SpamLimiter.tests.cpp">
+      <Filter>Log\Internal</Filter>
+    </ClCompile>
+    <ClCompile Include="Secure\CryptGenRandom.tests.cpp">
+      <Filter>Secure</Filter>
+    </ClCompile>
+    <ClCompile Include="Secure\CryptHashPassword.tests.cpp">
+      <Filter>Secure</Filter>
+    </ClCompile>
+    <ClCompile Include="Error\ErrString.tests.cpp">
+      <Filter>Error</Filter>
+    </ClCompile>
+    <ClCompile Include="Secure\ArrayString.tests.cpp">
+      <Filter>Secure</Filter>
+    </ClCompile>
+    <ClCompile Include="Secure\IsBufferEmpty.tests.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="String\Base64.tests.cpp">
+      <Filter>String</Filter>
+    </ClCompile>
+    <ClCompile Include="String\ConvertNumberW.tests.cpp">
+      <Filter>String</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Time">
+      <UniqueIdentifier>{f68c034e-4154-467d-994e-24a954f4a84f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SysInfo">
+      <UniqueIdentifier>{ee9f6def-0b2c-47ad-ac17-29874d920e8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="String">
+      <UniqueIdentifier>{35248be8-9a9d-4bad-9e46-8bcc0d122650}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Json">
+      <UniqueIdentifier>{60db881a-5c41-437f-b65a-ed9804822405}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphics">
+      <UniqueIdentifier>{7e1d73b4-bbc0-4ee0-be00-51f500f34191}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="File">
+      <UniqueIdentifier>{33efec0c-c58d-4afa-b240-afd013253faa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Secure">
+      <UniqueIdentifier>{738838af-0f30-4a3b-b4cc-66604bd70173}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Misc">
+      <UniqueIdentifier>{8f55aabe-2342-4519-ba5e-283e1adc84f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Math">
+      <UniqueIdentifier>{70e59844-5b99-4bb4-9f25-e5537a89aba9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Error">
+      <UniqueIdentifier>{b5293aa1-c2ed-4280-a530-a4e96def558a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Log">
+      <UniqueIdentifier>{476068ad-7af3-4e6d-9dcb-2573104c1dad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Log\Internal">
+      <UniqueIdentifier>{12ed7bc9-a8a3-4035-88ca-d1aa8a190ab6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ReportBugDlg</class>
+ <widget class="QDialog" name="ReportBugDlg">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>480</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Report Bug</string>
+  </property>
+  <widget class="QDialogButtonBox" name="buttonBox">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>468</y>
+     <width>300</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+   <property name="standardButtons">
+    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="severityLabel">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>54</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&amp;Severity:</string>
+   </property>
+   <property name="buddy">
+    <cstring>severityCombo</cstring>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="severityCombo">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>10</y>
+     <width>120</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="whatsThis">
+    <string>&lt;table&gt;&lt;tr&gt;&lt;td&gt;Critical&lt;/td&gt;&lt;td&gt;Program crashes, data is corrupted or a major feature completely fails.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Major&lt;/td&gt;&lt;td&gt;A major feature is difficult to use or does not work correctly. Or a minor feature completely fails.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Minor&lt;/td&gt;&lt;td&gt;A minor feature is difficult to use or does not work correctly.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Trival&lt;/td&gt;&lt;td&gt;The defect does not affect functionality such as a spelling mistake.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Enhancement&lt;/td&gt;&lt;td&gt;Add a new feature or change the behavior of a current feature.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</string>
+   </property>
+   <item>
+    <property name="text">
+     <string>Critical</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Major</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Minor</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Trivial</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Enhancement</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>305</y>
+     <width>400</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>The following information will also be sent:&lt;ul&gt;&lt;li&gt;QtApp type and version&lt;/li&gt;&lt;li&gt;Operating System type and version&lt;/li&gt;&lt;li&gt;Physical and available memory&lt;/li&gt;&lt;li&gt;CPU brand, version and speed&lt;/li&gt;&lt;li&gt;System, user and application locale.&lt;/li&gt;&lt;/ul&gt;</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="bugInPrevVersionsEdit">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>280</y>
+     <width>460</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="maxLength">
+    <number>120</number>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="bugInPrevVersionsCheck">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>260</y>
+     <width>400</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&amp;Bug occurred in previous version(s) (120 characters maximum):</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="summaryLabel">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>40</y>
+     <width>400</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&amp;Summary (120 characters maximum):</string>
+   </property>
+   <property name="buddy">
+    <cstring>summaryEdit</cstring>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="summaryEdit">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>59</y>
+     <width>460</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="maxLength">
+    <number>120</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="descriptionLabel">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>90</y>
+     <width>400</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&amp;Description (5,000 characters maximum):</string>
+   </property>
+   <property name="buddy">
+    <cstring>descriptionEdit</cstring>
+   </property>
+  </widget>
+  <widget class="QPlainTextEdit" name="descriptionEdit">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>110</y>
+     <width>460</width>
+     <height>71</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="stepsToReproduceLabel">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>190</y>
+     <width>400</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Steps to &amp;Reproduce (5,000 characters maximum):</string>
+   </property>
+   <property name="buddy">
+    <cstring>stepsToReproduceEdit</cstring>
+   </property>
+  </widget>
+  <widget class="QPlainTextEdit" name="stepsToReproduceEdit">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>210</y>
+     <width>460</width>
+     <height>41</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>ReportBugDlg</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>ReportBugDlg</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

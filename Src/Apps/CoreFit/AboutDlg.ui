@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AboutDlg</class>
+ <widget class="QDialog" name="AboutDlg">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>378</width>
+    <height>390</height>
+   </rect>
+  </property>
+  <property name="focusPolicy">
+   <enum>Qt::TabFocus</enum>
+  </property>
+  <property name="contextMenuPolicy">
+   <enum>Qt::NoContextMenu</enum>
+  </property>
+  <property name="windowTitle">
+   <string>About QtApp</string>
+  </property>
+  <property name="modal">
+   <bool>true</bool>
+  </property>
+  <widget class="QPushButton" name="closeButton">
+   <property name="geometry">
+    <rect>
+     <x>293</x>
+     <y>357</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&amp;Close</string>
+   </property>
+   <property name="default">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="graphicLabel">
+   <property name="geometry">
+    <rect>
+     <x>8</x>
+     <y>8</y>
+     <width>362</width>
+     <height>137</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Plain</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>:/Studio/Resources/Images/about.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="versionLabel">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>154</y>
+     <width>360</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">[version]</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+   </property>
+   <property name="textInteractionFlags">
+    <set>Qt::TextSelectableByMouse</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="copyrightLabel">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>174</y>
+     <width>360</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">[copyright]</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="licenseButton">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>357</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&amp;License</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="osLabel">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>280</y>
+     <width>100</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Operating System:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="actualOsLabel">
+   <property name="geometry">
+    <rect>
+     <x>125</x>
+     <y>280</y>
+     <width>233</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">[os]</string>
+   </property>
+   <property name="textInteractionFlags">
+    <set>Qt::TextSelectableByMouse</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="memoryLabel">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>300</y>
+     <width>100</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Memory:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="actualMemoryLabel">
+   <property name="geometry">
+    <rect>
+     <x>125</x>
+     <y>300</y>
+     <width>233</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">[mem]</string>
+   </property>
+   <property name="textInteractionFlags">
+    <set>Qt::TextSelectableByMouse</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="cpuLabel">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>320</y>
+     <width>100</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Processor:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="actualProcessorLabel">
+   <property name="geometry">
+    <rect>
+     <x>125</x>
+     <y>320</y>
+     <width>233</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">[cpu]</string>
+   </property>
+   <property name="textInteractionFlags">
+    <set>Qt::TextSelectableByMouse</set>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="sysInfoGroupBox">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>260</y>
+     <width>358</width>
+     <height>87</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>System Information</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="sendLogsButton">
+   <property name="geometry">
+    <rect>
+     <x>152</x>
+     <y>357</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&amp;Send Logs</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="licensedToNameValue">
+   <property name="geometry">
+    <rect>
+     <x>74</x>
+     <y>206</y>
+     <width>294</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">[licensed to name]</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="licensedToLabel">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>206</y>
+     <width>71</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Licensed to:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="licensedToEmailValue">
+   <property name="geometry">
+    <rect>
+     <x>74</x>
+     <y>226</y>
+     <width>294</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">[licensed to email]</string>
+   </property>
+  </widget>
+  <zorder>sysInfoGroupBox</zorder>
+  <zorder>closeButton</zorder>
+  <zorder>graphicLabel</zorder>
+  <zorder>versionLabel</zorder>
+  <zorder>copyrightLabel</zorder>
+  <zorder>licenseButton</zorder>
+  <zorder>osLabel</zorder>
+  <zorder>actualOsLabel</zorder>
+  <zorder>memoryLabel</zorder>
+  <zorder>actualMemoryLabel</zorder>
+  <zorder>cpuLabel</zorder>
+  <zorder>actualProcessorLabel</zorder>
+  <zorder>sendLogsButton</zorder>
+  <zorder>licensedToNameValue</zorder>
+  <zorder>licensedToLabel</zorder>
+  <zorder>licensedToEmailValue</zorder>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

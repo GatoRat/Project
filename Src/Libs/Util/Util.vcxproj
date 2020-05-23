@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{851E38B1-8AF4-4CCC-A90D-3491C66A2259}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Util</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)Build\Win64\$(Configuration)\Lib\</OutDir>
+    <IntDir>$(SolutionDir)Build\Win64\$(Configuration)\$(ProjectName)\</IntDir>
+    <CodeAnalysisRuleSet>$(SolutionDir)Src\Analysis.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)Build\Win64\$(Configuration)\Lib\</OutDir>
+    <IntDir>$(SolutionDir)Build\Win64\$(Configuration)\$(ProjectName)\</IntDir>
+    <CodeAnalysisRuleSet>$(SolutionDir)Src\Analysis.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <WarningLevel>Level4</WarningLevel>
+      <DisableSpecificWarnings>4201;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <TreatSpecificWarningsAsErrors>4263;4264;4265;4266;4289;4296;4431;4545;4547;4548;4549;4555;4905;4906;5038;%(TreatSpecificWarningsAsErrors)</TreatSpecificWarningsAsErrors>
+      <PreprocessorDefinitions>_DEBUG;_LIB;WIN32_LEAN_AND_MEAN;NOMINMAX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalIncludeDirectories>$(SolutionDir)Src\Libs\;$(SolutionDir)ThirdParty\;$(SolutionDir)ThirdParty\OpenSSL</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <TreatWarningAsError>true</TreatWarningAsError>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <PostBuildEvent>
+      <Message>Copy Binaries</Message>
+      <Command>$(SolutionDir)ThirdParty\CopyDebugBinaries.cmd $(SolutionDir)Build\Win64\$(Configuration)\bin</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <WarningLevel>Level4</WarningLevel>
+      <DisableSpecificWarnings>4201;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <TreatSpecificWarningsAsErrors>4263;4264;4265;4266;4289;4296;4431;4545;4547;4548;4549;4555;4905;4906;5038;%(TreatSpecificWarningsAsErrors)</TreatSpecificWarningsAsErrors>
+      <PreprocessorDefinitions>NDEBUG;_LIB;WIN32_LEAN_AND_MEAN;NOMINMAX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalIncludeDirectories>$(SolutionDir)Src\Libs\;$(SolutionDir)ThirdParty\;$(SolutionDir)ThirdParty\OpenSSL</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <TreatWarningAsError>true</TreatWarningAsError>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+    </Link>
+    <PostBuildEvent>
+      <Message>Copy Binaries</Message>
+      <Command>$(SolutionDir)ThirdParty\CopyReleaseBinaries.cmd $(SolutionDir)Build\Win64\$(Configuration)\bin</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Error\ErrString.cpp" />
+    <ClCompile Include="Error\OsError.cpp" />
+    <ClCompile Include="Error\Xception.cpp" />
+    <ClCompile Include="File\CsvCell.cpp" />
+    <ClCompile Include="File\CsvFile.cpp" />
+    <ClCompile Include="File\FastFile.cpp" />
+    <ClCompile Include="File\CheckUtf8Marker.cpp" />
+    <ClCompile Include="File\FastFileFind.cpp" />
+    <ClCompile Include="File\FileHelper.cpp" />
+    <ClCompile Include="File\GetPath.cpp" />
+    <ClCompile Include="File\IsValidFilenameChar.cpp" />
+    <ClCompile Include="File\RenameBackupFiles.cpp" />
+    <ClCompile Include="File\StdioFile.cpp" />
+    <ClCompile Include="File\SuperBasicFile.Win32.cpp" />
+    <ClCompile Include="File\TempFolder.cpp" />
+    <ClCompile Include="Graphics\Image.cpp" />
+    <ClCompile Include="Graphics\SpriteSheet.cpp" />
+    <ClCompile Include="Graphics\WICImage.cpp" />
+    <ClCompile Include="Graphics\WICImagingFactory.cpp" />
+    <ClCompile Include="Graphics\Graphics.cpp" />
+    <ClCompile Include="Json\JsonGetOptionalEx3a.cpp" />
+    <ClCompile Include="Json\JsonReadArray.cpp" />
+    <ClCompile Include="Json\JsonFormatError.cpp" />
+    <ClCompile Include="Json\JsonFile.cpp" />
+    <ClCompile Include="Json\JsonPath.cpp" />
+    <ClCompile Include="Json\XceptionJson.cpp" />
+    <ClCompile Include="Log\Internal\Logger.cpp" />
+    <ClCompile Include="Log\Internal\SpamLimiter.cpp" />
+    <ClCompile Include="Log\Log.cpp" />
+    <ClCompile Include="Log\LogStream.cpp" />
+    <ClCompile Include="Math\BounceScaler.cpp" />
+    <ClCompile Include="Math\CalcScale.cpp" />
+    <ClCompile Include="Math\FastRand.cpp" />
+    <ClCompile Include="Math\Random.cpp" />
+    <ClCompile Include="Misc\AppInfo.cpp" />
+    <ClCompile Include="Misc\ComInitialize.cpp" />
+    <ClCompile Include="Misc\CommandLine.cpp" />
+    <ClCompile Include="Misc\LocaleUtil.cpp" />
+    <ClCompile Include="Misc\TimedTest.cpp" />
+    <ClCompile Include="Misc\WaitEvent.cpp" />
+    <ClCompile Include="Network\TcpSocket.cpp" />
+    <ClCompile Include="Secure\AES.cpp" />
+    <ClCompile Include="Secure\AES_GCM.cpp" />
+    <ClCompile Include="Secure\AES_GCM.OpenSSL.cpp" />
+    <ClCompile Include="Secure\AES_GCM.Win32.cpp" />
+    <ClCompile Include="Secure\Crc32.cpp" />
+    <ClCompile Include="Secure\Crc32c.cpp" />
+    <ClCompile Include="Secure\CryptGenRandom.cpp" />
+    <ClCompile Include="Secure\CryptGenRandom.OpenSSL.cpp" />
+    <ClCompile Include="Secure\CryptGenRandom.Win32.cpp" />
+    <ClCompile Include="Secure\CryptSha.cpp" />
+    <ClCompile Include="Secure\CryptSha.OpenSSL.cpp" />
+    <ClCompile Include="Secure\CryptHashPassword.cpp" />
+    <ClCompile Include="Secure\CryptHashPassword.OpenSSL.cpp" />
+    <ClCompile Include="Secure\SecureContainerOrg.cpp" />
+    <ClCompile Include="Secure\SecureContainer.cpp" />
+    <ClCompile Include="Secure\SecureEraseMemory.cpp" />
+    <ClCompile Include="Secure\SHA-256.cpp" />
+    <ClCompile Include="String\Base64.cpp" />
+    <ClCompile Include="String\Convert.cpp" />
+    <ClCompile Include="String\ConvertNumber.cpp" />
+    <ClCompile Include="String\ConvertNumberW.cpp" />
+    <ClCompile Include="String\ConvertW.cpp" />
+    <ClCompile Include="String\FormatSize.cpp" />
+    <ClCompile Include="String\FormatSizeFast.cpp" />
+    <ClCompile Include="String\Money.cpp" />
+    <ClCompile Include="String\PlainStringBuilder.cpp" />
+    <ClCompile Include="String\StrSplit.cpp" />
+    <ClCompile Include="String\SplitText.cpp" />
+    <ClCompile Include="String\Str.cpp" />
+    <ClCompile Include="System\DirChange.Windows.cpp" />
+    <ClCompile Include="System\FileChange.Windows.cpp" />
+    <ClCompile Include="System\FormatNumber.Windows.cpp" />
+    <ClCompile Include="System\NetworkHelper.cpp" />
+    <ClCompile Include="System\SingleInstance.Windows.cpp" />
+    <ClCompile Include="System\SysGetPath.Windows.cpp" />
+    <ClCompile Include="System\SysInfo.Windows.cpp" />
+    <ClCompile Include="System\SysTime.cpp" />
+    <ClCompile Include="System\SysTime.Windows.cpp" />
+    <ClCompile Include="System\Windows\WinConsoleGetChar.cpp" />
+    <ClCompile Include="System\Windows\WinHandle.cpp" />
+    <ClCompile Include="System\Windows\WinReportError.cpp" />
+    <ClCompile Include="System\Windows\WinService.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="System\Windows\WinServiceHandle.cpp" />
+    <ClCompile Include="System\Windows\WinThread.cpp" />
+    <ClCompile Include="Time\DateTime.cpp" />
+    <ClCompile Include="Time\ParseDate.cpp" />
+    <ClCompile Include="Time\Scheduler.cpp" />
+    <ClCompile Include="Time\Stopwatch.cpp" />
+    <ClCompile Include="Time\TimerQueue.cpp" />
+    <ClCompile Include="Time\TimeStamp.cpp" />
+    <ClCompile Include="Time\TimeStampQueue.cpp" />
+    <ClCompile Include="Verify\VerifyFormat.Image.cpp" />
+    <ClCompile Include="Verify\VerifyFormat.Sound.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Detect\DetectArchitecture.h" />
+    <ClInclude Include="Detect\DetectCompiler.h" />
+    <ClInclude Include="Detect\DetectEndianess.h" />
+    <ClInclude Include="Detect\DetectEnv.h" />
+    <ClInclude Include="Detect\DetectOperatingSystem.h" />
+    <ClInclude Include="Error\ErrString.h" />
+    <ClInclude Include="Error\OsError.h" />
+    <ClInclude Include="Error\Xception.h" />
+    <ClInclude Include="Error\XceptionT.h" />
+    <ClInclude Include="File\CsvCell.h" />
+    <ClInclude Include="File\CsvFile.h" />
+    <ClInclude Include="File\FastFile.h" />
+    <ClInclude Include="File\CheckUtf8Marker.h" />
+    <ClInclude Include="File\FileHelper.h" />
+    <ClInclude Include="File\GetPath.h" />
+    <ClInclude Include="File\IsValidFilenameChar.h" />
+    <ClInclude Include="File\FastFindFile.h" />
+    <ClInclude Include="File\PathPredicates.h" />
+    <ClInclude Include="File\RenameBackupFiles.h" />
+    <ClInclude Include="File\StdioFile.h" />
+    <ClInclude Include="File\SuperBasicFile.h" />
+    <ClInclude Include="File\TempFolder.h" />
+    <ClInclude Include="File\XceptionFile.h" />
+    <ClInclude Include="File\XceptionFileT.h" />
+    <ClInclude Include="Graphics\Graphics.h" />
+    <ClInclude Include="Graphics\Image.h" />
+    <ClInclude Include="Graphics\SpriteSheet.h" />
+    <ClInclude Include="Graphics\WICImage.h" />
+    <ClInclude Include="Graphics\WICImagingFactory.h" />
+    <ClInclude Include="Json\Json.h" />
+    <ClInclude Include="Json\JsonGetBlobEx.h" />
+    <ClInclude Include="Json\JsonGetOptionalEx3a.h" />
+    <ClInclude Include="Json\JsonMessage.h" />
+    <ClInclude Include="Json\JsonReadArray.h" />
+    <ClInclude Include="Json\JsonFormatError.h" />
+    <ClInclude Include="Json\JsonGetEx2.h" />
+    <ClInclude Include="Json\JsonFile.h" />
+    <ClInclude Include="Json\JsonPath.h" />
+    <ClInclude Include="Json\JsonStringHandler.h" />
+    <ClInclude Include="Json\JsonTimeStamp.h" />
+    <ClInclude Include="Json\JsonWriter.h" />
+    <ClInclude Include="Json\XceptionJson.h" />
+    <ClInclude Include="Json\JsonGet.h" />
+    <ClInclude Include="Json\JsonGetEx.h" />
+    <ClInclude Include="Json\JsonGetOptionalEx.h" />
+    <ClInclude Include="Json\JsonGetOptional.h" />
+    <ClInclude Include="Log\Internal\Logger.h" />
+    <ClInclude Include="Log\Internal\SpamLimiter.h" />
+    <ClInclude Include="Log\Log.h" />
+    <ClInclude Include="Log\LogStream.h" />
+    <ClInclude Include="Math\Almost.h" />
+    <ClInclude Include="Math\BounceScaler.h" />
+    <ClInclude Include="Math\CalcScale.h" />
+    <ClInclude Include="Math\FastRand.h" />
+    <ClInclude Include="Math\Random.h" />
+    <ClInclude Include="Math\RoundToNearest.h" />
+    <ClInclude Include="Math\RoundUp.h" />
+    <ClInclude Include="Math\Trig.h" />
+    <ClInclude Include="Misc\AppInfo.h" />
+    <ClInclude Include="Misc\ByteOrder.h" />
+    <ClInclude Include="Misc\ComInitialize.h" />
+    <ClInclude Include="Misc\CommandLine.h" />
+    <ClInclude Include="Misc\ConsoleColor.h" />
+    <ClInclude Include="Misc\countof.h" />
+    <ClInclude Include="Misc\Defines.Misc.h" />
+    <ClInclude Include="Misc\IsBufferEmpty.h" />
+    <ClInclude Include="Misc\SafeQueueWaitable.h" />
+    <ClInclude Include="Misc\Semaphore.h" />
+    <ClInclude Include="Misc\WaitEvent.h" />
+    <ClInclude Include="Misc\Finally.h" />
+    <ClInclude Include="Misc\LocaleUtil.h" />
+    <ClInclude Include="Misc\MakeFourCC.h" />
+    <ClInclude Include="Misc\SafeQueue.h" />
+    <ClInclude Include="Misc\TimedTest.h" />
+    <ClInclude Include="Network\TcpSocket.h" />
+    <ClInclude Include="Secure\AES.h" />
+    <ClInclude Include="Secure\AES_GCM.h" />
+    <ClInclude Include="Secure\AES_GCM.OpenSSL.h" />
+    <ClInclude Include="Secure\AES_GCM.Win32.h" />
+    <ClInclude Include="Secure\ArrayString.h" />
+    <ClInclude Include="Secure\Crc32.h" />
+    <ClInclude Include="Secure\Crc32c.h" />
+    <ClInclude Include="Secure\Crc32cTable.h" />
+    <ClInclude Include="Secure\CryptGenRandom.h" />
+    <ClInclude Include="Secure\CryptGenRandom.OpenSSL.h" />
+    <ClInclude Include="Secure\CryptGenRandom.Win32.h" />
+    <ClInclude Include="Secure\CryptSha.h" />
+    <ClInclude Include="Secure\CryptSha.OpenSSL.h" />
+    <ClInclude Include="Secure\CryptHashPassword.h" />
+    <ClInclude Include="Secure\CryptHashPassword.OpenSSL.h" />
+    <ClInclude Include="Secure\SecureBuffer.h" />
+    <ClInclude Include="Secure\SecureContainerOrg.h" />
+    <ClInclude Include="Secure\SecureContainer.h" />
+    <ClInclude Include="Secure\SecureEraseMemory.h" />
+    <ClInclude Include="Secure\SHA-256.h" />
+    <ClInclude Include="String\ASCII.h" />
+    <ClInclude Include="String\ASCIIW.h" />
+    <ClInclude Include="String\Base64.h" />
+    <ClInclude Include="String\constexpr_numeric_string.h" />
+    <ClInclude Include="String\constexpr_string.h" />
+    <ClInclude Include="String\Convert.h" />
+    <ClInclude Include="String\ConvertW.h" />
+    <ClInclude Include="String\FormatSize.h" />
+    <ClInclude Include="String\FormatSizeFast.h" />
+    <ClInclude Include="String\GetNumDigits.h" />
+    <ClInclude Include="String\Money.h" />
+    <ClInclude Include="String\PlainStringBuilder.h" />
+    <ClInclude Include="String\Predicates.h" />
+    <ClInclude Include="String\StrSplit.h" />
+    <ClInclude Include="String\SplitText.h" />
+    <ClInclude Include="String\Str.h" />
+    <ClInclude Include="System\DirChange.h" />
+    <ClInclude Include="System\FileChange.h" />
+    <ClInclude Include="System\FormatNumber.h" />
+    <ClInclude Include="System\NetworkHelper.h" />
+    <ClInclude Include="System\SingleInstance.h" />
+    <ClInclude Include="System\SysGetPath.h" />
+    <ClInclude Include="System\SysInfo.h" />
+    <ClInclude Include="System\SysTime.h" />
+    <ClInclude Include="System\Windows\WinConsoleGetChar.h" />
+    <ClInclude Include="System\Windows\WinHandle.h" />
+    <ClInclude Include="System\Windows\WinReportError.h" />
+    <ClInclude Include="System\Windows\WinSafeQueue.h" />
+    <ClInclude Include="System\Windows\WinService.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="System\Windows\WinServiceHandle.h" />
+    <ClInclude Include="System\Windows\WinThread.h" />
+    <ClInclude Include="System\_lean_windows_.h" />
+    <ClInclude Include="Time\DateTime.h" />
+    <ClInclude Include="Time\Defines.Time.h" />
+    <ClInclude Include="Time\ParseDate.h" />
+    <ClInclude Include="Time\Scheduler.h" />
+    <ClInclude Include="Time\Stopwatch.h" />
+    <ClInclude Include="Time\TimerQueue.h" />
+    <ClInclude Include="Time\TimeStamp.h" />
+    <ClInclude Include="Time\TimeStampQueue.h" />
+    <ClInclude Include="Verify\VerifyFormat.Image.h" />
+    <ClInclude Include="Verify\VerifyFormat.Sound.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
