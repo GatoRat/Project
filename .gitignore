@@ -5,6 +5,7 @@
 ~*
 .vs
 Build
+cov-int
 *.vcxproj.user
 !CoreFit.vcxproj.user
 !AppExp.vcxproj.user

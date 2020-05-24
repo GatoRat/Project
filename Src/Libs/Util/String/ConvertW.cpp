@@ -397,7 +397,7 @@ namespace ConvertW
         {
             const wchar_t* pHexDigits = hexDigits[useUpperCase ? 1 : 0];
             wchar_t hexStr[MaxLen_Uint64HexStr];
-            unsigned offset = static_cast<unsigned>(sizeof(hexStr));
+            unsigned offset = MaxLen_Uint64HexStr;
 
             do
             {
@@ -406,7 +406,7 @@ namespace ConvertW
 
             } while (val);
 
-            const unsigned padOffset = static_cast<unsigned>(sizeof(hexStr) - padLen); //-V104
+            const unsigned padOffset = MaxLen_Uint64HexStr - padLen;
             while (offset > padOffset)
             {
                 hexStr[--offset] = ASCIIW::Zero;

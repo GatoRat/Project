@@ -166,7 +166,7 @@ void LibraryView::SetColumns()
         else
             ui->listView->header()->setSortIndicator(-orderColumn - 1, Qt::DescendingOrder);
 
-        ui->listView->setColumnHidden(4, true);
+        ui->listView->setColumnHidden(4, true); //-V112
         ui->listView->setColumnHidden(5, true);
 
         m_designsModel.setHeaderData(0, Qt::Horizontal, tr("Name"));
@@ -465,7 +465,7 @@ void LibraryView::on_listView_customContextMenuRequested(const QPoint &pos)
             pSortByMenu->addAction(CreateSortMenuItem(tr("Sort by Name"), 1, sortColumn == 0));
             pSortByMenu->addAction(CreateSortMenuItem(tr("Sort by Type"), 2, sortColumn == 1));
             pSortByMenu->addAction(CreateSortMenuItem(tr("Sort by Artist"), 3, sortColumn == 2));
-            pSortByMenu->addAction(CreateSortMenuItem(tr("Sort by Modified Date"), 4, sortColumn == 2));
+            pSortByMenu->addAction(CreateSortMenuItem(tr("Sort by Modified Date"), 4, sortColumn == 2)); //-V112
             //pSortByMenu->addAction(CreateSortMenuItem(pSortBy, tr("Sort by Size"), 5, sortColumn == 2));
 
         QAction* pAction = menu.exec(ui->listView->mapToGlobal(pos));
@@ -473,7 +473,7 @@ void LibraryView::on_listView_customContextMenuRequested(const QPoint &pos)
         {
             bool success = false; 
             int column = pAction->data().toInt(&success);
-            if (success && column != sortColumn && column > 1 && column <= 4)
+            if (success && column != sortColumn && column > 1 && column <= 4) //-V112
             {
                 ui->treeWidget->sortByColumn(column - 1);
             }
@@ -513,7 +513,7 @@ void LibraryView::OnRenameDesignListView(bool /*checked*/)
 
 void LibraryView::OnColumnResized(int column, int /*oldSize*/, int newSize)
 {
-    if (column > 1 && column < 4)
+    if (column > 1 && column < 4) //-V112
     {
         pSettings->setValue(settingsPath_columns % QString::number(column), newSize);
     }

@@ -529,8 +529,8 @@ namespace WICImaging
 
     uint64_t ImageData::calcTrimSavings(const Rect& rect) const
     {
-        uint64_t savings = rect.width < _size.width ? (_size.width - rect.width) * rect.height : 0;
-        savings += rect.height < _size.height ? (_size.height - rect.height) * _size.width : 0;
+        uint64_t savings = rect.width < _size.width ? static_cast<uint64_t>(_size.width - rect.width) * rect.height : 0;
+        savings += rect.height < _size.height ? static_cast<uint64_t>(_size.height - rect.height) * _size.width : 0;
         return savings * sizeof(Pixel);
     }
 

@@ -22,7 +22,14 @@ LogStream::~LogStream()
     {
         Log::String(_string);
     }
-    _stream.rdbuf(_pOrgBuf);
+
+    try
+    {
+        _stream.rdbuf(_pOrgBuf);
+    }
+    catch (ios_base::failure&) // swallow exception
+    {
+    }
 }
 
 streambuf::int_type LogStream::overflow(int_type v)

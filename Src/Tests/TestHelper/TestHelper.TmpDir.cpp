@@ -88,7 +88,8 @@ namespace TestHelper
     {
         if (!_fullpath.empty())
         {
-            fs::remove_all(_fullpath);
+            error_code ec; // ignored
+            fs::remove_all(_fullpath, ec);
             _fullpath.clear();
         }
     }

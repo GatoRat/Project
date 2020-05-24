@@ -271,7 +271,8 @@ namespace Log::Internal
 
             if (_maxBackups == 0)
             {
-                remove(_pathname);
+                error_code ec; // ignored
+                remove(_pathname, ec);
             }
             else
             {

@@ -313,6 +313,10 @@ FileException::FileException(const QDataStream& stream, ErrCode code, const char
         pathname  = pFileDevice->fileName();
         fileError = pFileDevice->error();
     }
+    else
+    {
+        fileError = QFileDevice::FileError::NoError;
+    }
 }
 
 void FileException::Log(const char* pCatchInfo) const

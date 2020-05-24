@@ -28,6 +28,7 @@ static const char* pMustBeAdmin = "You must be an administrator to use this comm
 
 WinService::WinService() //-V730
 {
+    memset(&_status, 0, sizeof(_status));
     _shutdownEvent.Create(TRUE, TRUE);
 }
 

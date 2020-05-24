@@ -20,7 +20,7 @@ using namespace std;
 const char* GetProcessorString(bool substituteSpecialChars, bool force)
 {
     constexpr size_t MaxProcessorStrLen = 127;
-    static char processorStr[MaxProcessorStrLen + 1]{ 0 };
+    static char processorStr[MaxProcessorStrLen + 3]{ 0 };
 
     if (!processorStr[0] || force) //-V560
     {
