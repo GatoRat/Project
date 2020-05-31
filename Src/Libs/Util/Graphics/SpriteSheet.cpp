@@ -22,7 +22,7 @@ namespace Graphics
         }
 
         rapidjson::Document doc;
-        string contents = JsonReadFileInsitu(sheetName, doc); //-V808
+        [[maybe_unused]] string contents = JsonReadFileInsitu(sheetName, doc); //-V808
         read(doc, filename);
     }
 

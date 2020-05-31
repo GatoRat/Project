@@ -48,7 +48,7 @@ public:
     void reportEvent(EventType type, const wchar_t* pErrStr) const;
 
     DWORD reportError(const char* pWhat) const;
-    DWORD reportError(Xception& e) const;
+    DWORD reportError(const Xception& e) const;
     DWORD reportError(DWORD lastError) const;
 
 private:

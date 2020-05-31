@@ -6,7 +6,7 @@
 class Arguments
 {
 public:
-    Arguments(QStringList args);
+    explicit Arguments(QStringList args);
 
     bool HasNext() const;
     bool Next();

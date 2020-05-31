@@ -1264,6 +1264,8 @@ namespace Str
                 reserveExtra += string.size();
             }
 
+			formattedStr.reserve(reserveExtra);
+
             for (size_t i = 0; i < formatString.size();)
             {
                 if (formatString[i] == '{' &&

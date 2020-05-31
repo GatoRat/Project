@@ -15,7 +15,7 @@ public:
 
 public:
     WinThread() = default;
-    WinThread(int priority, bool startSuspended = false, unsigned stackSize = 0);
+    explicit WinThread(int priority, bool startSuspended = false, unsigned stackSize = 0);
     WinThread(PWTHREAD_FUNCTION pThread, void* pParam, int priority = -1, bool startSuspended = false, unsigned stackSize = 0);
     WinThread(const WinThread&) = delete;
     void operator=(const WinThread&) = delete;
@@ -48,8 +48,8 @@ class WinThreadTerm : public WinThread
 {
 public:
     WinThreadTerm();
-    WinThreadTerm(int priority, bool startSuspended = false, unsigned stackSize = 0);
-    WinThreadTerm(HANDLE hEndThreadEvent, int priority = -1, bool startSuspended = false, unsigned stackSize = 0);
+    explicit WinThreadTerm(int priority, bool startSuspended = false, unsigned stackSize = 0);
+    explicit WinThreadTerm(HANDLE hEndThreadEvent, int priority = -1, bool startSuspended = false, unsigned stackSize = 0);
     ~WinThreadTerm() override;
 
     bool SetEndEventHandle(HANDLE h, bool dupHandle);

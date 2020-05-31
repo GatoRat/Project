@@ -18,8 +18,8 @@ namespace WICImaging
         /** ImageData constructor.
          */
         ImageData() = default;
-        ImageData(const wchar_t* pPathname, const Graphics::Rect* pRect = nullptr, uint32_t frameNum = 0);
-        ImageData(const fs::path& pathname, const Graphics::Rect* pRect = nullptr, uint32_t frameNum = 0);
+        explicit ImageData(const wchar_t* pPathname, const Graphics::Rect* pRect = nullptr, uint32_t frameNum = 0);
+        explicit ImageData(const fs::path& pathname, const Graphics::Rect* pRect = nullptr, uint32_t frameNum = 0);
         ImageData(uint32_t width, uint32_t height, const Graphics::Pixel* pPixels);
         ImageData(Graphics::Size size, const Graphics::Pixel* pPixels);
         ImageData(ImageData&& rhs) noexcept;

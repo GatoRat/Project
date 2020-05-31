@@ -63,17 +63,30 @@ string FormatMemorySizeFast(uint64_t val, unsigned decimalPlaces, bool isNeg)
     int symbol = 0;
     uint64_t remainder = 0;
 
-    do
+    //do
+    //{
+    //    if (val < Kilobyte)
+    //    {
+    //        break;
+    //    }
+
+    //    remainder = static_cast<uint64_t>(val % Kilobyte);
+    //    val /= Kilobyte;
+
+    //} while (pSymbols[++symbol]);
+
+    while (val >= Kilobyte)
     {
-        if (val < Kilobyte)
+        remainder = static_cast<uint64_t>(val % Kilobyte);
+        val /= Kilobyte;
+
+        if (!pSymbols[symbol + 1])
         {
             break;
         }
 
-        remainder = static_cast<uint64_t>(val % Kilobyte);
-        val /= Kilobyte;
-
-    } while (pSymbols[++symbol + 1]);
+        ++symbol;
+    }
 
     if (decimalPlaces)
     {

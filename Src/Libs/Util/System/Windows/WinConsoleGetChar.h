@@ -16,7 +16,7 @@ class WinConsoleCtrlHandler : public WinEvent
 {
 public:
     WinConsoleCtrlHandler();
-    WinConsoleCtrlHandler(WinEvent& shutdownEvent);
+    explicit WinConsoleCtrlHandler(WinEvent& shutdownEvent);
     ~WinConsoleCtrlHandler();
 
     static WinEvent _appClosed;

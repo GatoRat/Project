@@ -11,7 +11,7 @@ TimeStampQueue::Key TimeStampQueue::startTimer(TimeStamp timeStamp, Callback tim
 
     const uint64_t key = _nextKey++;
     _timers[key] = item;
-    return key;
+    return Key(key);
 }
 
 void TimeStampQueue::update(TimeStamp timeStamp)

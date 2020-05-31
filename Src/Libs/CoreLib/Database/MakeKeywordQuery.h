@@ -12,7 +12,7 @@ struct DbMakeKeywordStr
     bool		  _firstTag = true;
 
     // Pass the primary pipe delimeted keyword string. Must already be simplified and lower case: only alphanumeric, no leading/trailing whitepace and single spaces
-    DbMakeKeywordStr(const QString& keywords);
+    explicit DbMakeKeywordStr(const QString& keywords);
     DbMakeKeywordStr(const DbMakeKeywordStr&) = delete;
     void operator=(const DbMakeKeywordStr&) = delete;
 

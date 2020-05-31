@@ -91,7 +91,7 @@ class WinEvent : public WinHandle
 {
 public:
     WinEvent(HANDLE hHandle = nullptr, bool dupHandle = false);
-    WinEvent(BOOL manualReset, BOOL initState = FALSE, LPCTSTR pName = nullptr, PSECURITY_ATTRIBUTES pSA = nullptr);
+    explicit WinEvent(BOOL manualReset, BOOL initState = FALSE, LPCTSTR pName = nullptr, PSECURITY_ATTRIBUTES pSA = nullptr);
 
     bool Create(BOOL manualReset = FALSE, BOOL initState = FALSE, LPCTSTR pName = nullptr, PSECURITY_ATTRIBUTES pSA = nullptr);
     bool Open(LPCTSTR pName, DWORD access = EVENT_ALL_ACCESS, BOOL inheritFlag = FALSE);
@@ -113,7 +113,7 @@ class WinSemaphore : public WinHandle
 {
 public:
     explicit WinSemaphore(HANDLE hHandle = nullptr, bool dupHandle = false);
-    WinSemaphore(LONG maxCount, LONG initCount = -1, LPCTSTR pName = nullptr, PSECURITY_ATTRIBUTES pSA = nullptr);
+    explicit WinSemaphore(LONG maxCount, LONG initCount = -1, LPCTSTR pName = nullptr, PSECURITY_ATTRIBUTES pSA = nullptr);
 
     bool Create(LONG maxCount, LONG initCount = -1, LPCTSTR pName = nullptr, PSECURITY_ATTRIBUTES pSA = nullptr);
 
@@ -158,10 +158,10 @@ public:
 
 public:
     explicit WinMutex(HANDLE hHandle = nullptr, bool dupHandle = false);
-    WinMutex(BOOL initialOwner, LPCTSTR pName = nullptr, PSECURITY_ATTRIBUTES pSA = nullptr);
+    explicit WinMutex(BOOL initialOwner, LPCTSTR pName = nullptr, PSECURITY_ATTRIBUTES pSA = nullptr);
     ~WinMutex() override;
 
-    BOOL Close();
+    BOOL Close() override;
 
     bool Create(BOOL initialOwner = FALSE, LPCTSTR pName = nullptr, PSECURITY_ATTRIBUTES pSA = nullptr);
     int  CreateAsOwner(LPCTSTR pName = nullptr, PSECURITY_ATTRIBUTES pSA = nullptr);

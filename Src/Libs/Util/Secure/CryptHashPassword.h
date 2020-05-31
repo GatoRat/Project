@@ -18,7 +18,7 @@ struct CryptHashPassword2 final
     uint8_t hash[HashLen];
 
     CryptHashPassword2() = default;
-    CryptHashPassword2(std::string_view password, int32_t iterations = 1000);
+    explicit CryptHashPassword2(std::string_view password, int32_t iterations = 1000);
     ~CryptHashPassword2();
 
     void set(std::string_view password, int32_t iterations = 1000);

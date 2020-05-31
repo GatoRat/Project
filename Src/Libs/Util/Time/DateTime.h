@@ -85,7 +85,7 @@ public:
         @param precision The precision at which to end parsing.
         @param pEnd An optional pointer to what terminated the parsing.
     */
-    DateTime(const char* pStr, Precision precision = Precision::Microsecond, const char** pEnd = nullptr);
+    explicit DateTime(const char* pStr, Precision precision = Precision::Microsecond, const char** pEnd = nullptr);
 
     /** DateTime copy constructor.
     */

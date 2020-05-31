@@ -63,7 +63,7 @@ public:
             writer.StartObject();
         }
 
-        Object(JsonWriter& jsonWriter)
+        explicit Object(JsonWriter& jsonWriter)
             : writer{ jsonWriter }
         {
             writer.StartObject();

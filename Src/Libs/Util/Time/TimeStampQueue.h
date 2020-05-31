@@ -40,6 +40,6 @@ public:
 
 private:
     friend TimeStampQueue;
-    Key(uint64_t key) : _key{ key } {};
+    explicit Key(uint64_t key) : _key{ key } {};
     uint64_t _key{ 0 };
 };

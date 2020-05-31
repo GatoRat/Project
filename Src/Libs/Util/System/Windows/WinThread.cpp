@@ -100,7 +100,7 @@ bool WinThread::Create(PWTHREAD_FUNCTION pThread, void* pParam, int priority, bo
         }
     }
 
-	return true;
+	return success;
 }
 
 unsigned WinThread::ThreadMain()

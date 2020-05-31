@@ -28,7 +28,7 @@ private:
 	void CreateNewSubWindow(const QString* pPathname);
 
 public:
-	MainWindow(const QString& pathname, QWidget *parent = 0);
+	explicit MainWindow(const QString& pathname, QWidget *parent = 0);
 	~MainWindow();
 
 	void closeEvent(QCloseEvent* event);

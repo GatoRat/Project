@@ -11,7 +11,7 @@
 class WinServiceHandle
 {
 public:
-    WinServiceHandle(std::wstring_view serviceName);
+    explicit WinServiceHandle(std::wstring_view serviceName);
     WinServiceHandle(const WinServiceHandle&) = delete;
     void operator=(const WinServiceHandle&) = delete;
     virtual ~WinServiceHandle();

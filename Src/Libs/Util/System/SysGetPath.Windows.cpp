@@ -115,7 +115,7 @@ namespace SysGetPath
     {
         fs::path path;
 
-        Path(REFKNOWNFOLDERID rfid)
+        explicit Path(REFKNOWNFOLDERID rfid)
             : path(GetKnownFolderPath(rfid, true) / AppInfo::GetCompany() / AppInfo::GetProduct())
         {
             if (Str::CompareV(AppInfo::GetProduct(), AppInfo::GetName(), true) != 0)

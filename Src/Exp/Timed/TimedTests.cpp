@@ -35,7 +35,7 @@ struct Data
     int    menuOrder  { 0    };
     bool   isPromoOnly{ true };
 
-    Data(const string& type_) : type(type_) {}
+    explicit Data(const string& type_) : type(type_) {}
 
     bool operator<(const Data& rhs) const
     {

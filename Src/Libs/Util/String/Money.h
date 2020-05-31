@@ -42,15 +42,4 @@ namespace Money
         @remarks If \a pStr is "X 1.23" \a val will be set to 12300.
     */
     bool ToVal2(const char* pStr, int64_t& val, char decimalPoint = '.', char thousandsSep = ',', char* pCurSymbol = nullptr, const char** pEnd = nullptr);
-
-    namespace Optima
-    {
-        extern char currencySymbol[6];
-        extern char thousandsSymbol;
-        extern char appendCurrency;
-
-        const char* parseCurrency(const char* pStr);
-        void        parseMoneyFormat(const char* pMoneyFormat);
-        const char* formatDollars(__int64 money, char* pBuffer, size_t bufferLen);
-    }
 }

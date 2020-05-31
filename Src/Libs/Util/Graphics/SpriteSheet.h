@@ -27,7 +27,7 @@ namespace Graphics
             bool        rotated = false;
             bool        trimmed = false;
 
-            Frame(const rapidjson::Value& jsonVal);
+            explicit Frame(const rapidjson::Value& jsonVal);
 
             void write(JsonWriter& writer) const;
         };

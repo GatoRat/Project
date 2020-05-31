@@ -76,7 +76,7 @@ bool WinServiceHandle::stopService(SERVICE_STATUS_PROCESS* pStatus)
 
     params.dwReason = SERVICE_STOP_REASON_FLAG_PLANNED | SERVICE_STOP_REASON_MAJOR_NONE | SERVICE_STOP_REASON_MINOR_NONE;
 
-    DWORD lastError = NO_ERROR;
+    [[maybe_unused]] DWORD lastError = NO_ERROR;
     if (!ControlServiceEx(_hService, SERVICE_CONTROL_STOP, SERVICE_CONTROL_STATUS_REASON_INFO, &params))
     {
         lastError = GetLastError();

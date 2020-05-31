@@ -56,7 +56,7 @@ TimerQueue::Key TimerQueue::startTimer(bool oneShot, float duration, TimerCallba
 
     const uint64_t key = _nextKey++;
     _timers[key] = item;
-    return key;
+    return Key(key);
 }
 
 void TimerQueue::update(float dt)

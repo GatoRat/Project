@@ -14,7 +14,7 @@
 class LogStream : public std::basic_streambuf<char>
 {
 public:
-    LogStream(std::ostream& stream, char prefix = '!');
+    explicit LogStream(std::ostream& stream, char prefix = '!');
     LogStream(const LogStream&) = delete;
     void operator=(const LogStream&) = delete;
     ~LogStream() override;

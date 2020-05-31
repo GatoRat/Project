@@ -320,7 +320,7 @@ DWORD WinService::reportError(const char* pWhat) const
     return errCode ? errCode : static_cast<DWORD>(-1);
 }
 
-DWORD WinService::reportError(Xception& e) const
+DWORD WinService::reportError(const Xception& e) const
 {
     reportEvent(EventType::Error, e.errStr().c_str());
     return static_cast<DWORD>(e.code() ? e.code() : -1);
@@ -736,7 +736,7 @@ bool WinService::reportStatusToSCMgr(DWORD curState, DWORD exitCode, DWORD waitH
             result = false;
         }
     }
-    return true;
+    return result;
 }
 
 void WinService::serviceCtrl(DWORD ctrlCode)
