@@ -8,7 +8,7 @@
 
 using namespace std;
 
-char WinConsoleGetChar(WinEvent& shutdownEvent)
+char WinConsoleGetChar(const WinEvent& shutdownEvent)
 {
     HANDLE events[2];
 
@@ -79,7 +79,7 @@ WinConsoleCtrlHandler::WinConsoleCtrlHandler()
     init();
 }
 
-WinConsoleCtrlHandler::WinConsoleCtrlHandler(WinEvent& shutdownEvent)
+WinConsoleCtrlHandler::WinConsoleCtrlHandler(const WinEvent& shutdownEvent)
     : WinEvent(shutdownEvent, TRUE)
 {
     init();

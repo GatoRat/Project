@@ -65,7 +65,7 @@
       <SDLCheck>true</SDLCheck>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <AdditionalIncludeDirectories>$(SolutionDir)Src\Libs\;$(SolutionDir)ThirdParty\;$(SolutionDir)ThirdParty\OpenSSL</AdditionalIncludeDirectories>
-      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <LanguageStandard>stdcpp17</LanguageStandard>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
@@ -159,7 +159,6 @@
     <ClCompile Include="Secure\CryptSha.OpenSSL.cpp" />
     <ClCompile Include="Secure\CryptHashPassword.cpp" />
     <ClCompile Include="Secure\CryptHashPassword.OpenSSL.cpp" />
-    <ClCompile Include="Secure\SecureContainerOrg.cpp" />
     <ClCompile Include="Secure\SecureContainer.cpp" />
     <ClCompile Include="Secure\SecureEraseMemory.cpp" />
     <ClCompile Include="Secure\SHA-256.cpp" />
@@ -294,7 +293,6 @@
     <ClInclude Include="Secure\CryptHashPassword.h" />
     <ClInclude Include="Secure\CryptHashPassword.OpenSSL.h" />
     <ClInclude Include="Secure\SecureBuffer.h" />
-    <ClInclude Include="Secure\SecureContainerOrg.h" />
     <ClInclude Include="Secure\SecureContainer.h" />
     <ClInclude Include="Secure\SecureEraseMemory.h" />
     <ClInclude Include="Secure\SHA-256.h" />

@@ -12,9 +12,9 @@ namespace Str
     {
         vector<string_view> strings;
 
-        Split(str, delimiter, [&](size_t /*num*/, const string_view& str)->bool
+        Split(str, delimiter, [&](size_t /*num*/, const string_view& innerStr)->bool
         {
-            strings.push_back(str);
+            strings.push_back(innerStr);
             return true;
         });
 

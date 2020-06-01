@@ -60,9 +60,9 @@ union TimeStamp
     TimeStamp() = default;
     explicit TimeStamp(Set set);
     explicit TimeStamp(int64_t val);
-    TimeStamp(const char* pStr, bool secondsRequired = true, const char** pEnd = nullptr, bool* pError = nullptr);
+    explicit TimeStamp(const char* pStr, bool secondsRequired = true, const char** pEnd = nullptr, bool* pError = nullptr);
     TimeStamp(uint16_t year, uint8_t mon, uint8_t day, uint8_t hour, uint8_t min, uint8_t sec, uint16_t msec = 0);
-    TimeStamp(const tm& tm);
+    explicit TimeStamp(const tm& tm);
     TimeStamp(TimeStamp lhs, TimeStamp rhs);
 
     void operator=(const tm& tm);

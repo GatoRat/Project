@@ -47,15 +47,15 @@ void Preferences::General::Load()
     }
 }
 
-void Preferences::General::Save(const General& general)
+void Preferences::General::Save(const General& general_)
 {
     if (pSettings)
     {
         pSettings->beginGroup(settingsPath_general);
 
-        if (textColor != general.textColor)
+        if (textColor != general_.textColor)
         {
-            textColor = general.textColor;
+            textColor = general_.textColor;
             pSettings->setValue(settingsPath_fillSolid, (int)textColor);
         }
 
@@ -85,15 +85,15 @@ void Preferences::Library::Load()
     }
 }
 
-void Preferences::Library::Save(const Library& library)
+void Preferences::Library::Save(const Library& library_)
 {
     if (pSettings)
     {
         pSettings->beginGroup(settingsPath_library);
 
-        if (useStartsWith != library.useStartsWith)
+        if (useStartsWith != library_.useStartsWith)
         {
-            useStartsWith = library.useStartsWith;
+            useStartsWith = library_.useStartsWith;
             pSettings->setValue(settingsPath_useStartsWith, useStartsWith);
         }
 

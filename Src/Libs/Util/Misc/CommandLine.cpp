@@ -203,7 +203,7 @@ namespace CommandLine
                     parseArg(argNum++, argv[arg]);
                 }
             }
-            catch (XceptionT<Error>& e)
+            catch (const XceptionT<Error>& e)
             {
                 switch (e.code())
                 {

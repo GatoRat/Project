@@ -246,14 +246,14 @@ void CsvFile::write(const fs::path& pathname) const
     {
         write(file);
     }
-    catch (Xception& e)
+    catch (const Xception& e)
     {
         try
         {
             file.close();
             fs::remove(pathname);
         }
-        catch (exception&)
+        catch (const exception&)
         { //-V565
         }
 

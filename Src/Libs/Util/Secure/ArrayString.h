@@ -17,7 +17,7 @@ public:
         erase();
     }
 
-    ArrayString(const char* pStr)
+    explicit ArrayString(const char* pStr)
     {
         erase();
         cat(pStr);

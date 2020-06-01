@@ -6,7 +6,7 @@
 class QSettingsPlus : public QSettings
 {
 public:
-    QSettingsPlus(QObject* pParent = nullptr) : QSettings(pParent) {}
+    explicit QSettingsPlus(QObject* pParent = nullptr) : QSettings(pParent) {}
 
     QMap<QString, QVariant> GetKeyValueMap(const QString& prefix);
     QVector<QPair<QString, QVariant>> GetKeyValueVector(const QString& prefix);

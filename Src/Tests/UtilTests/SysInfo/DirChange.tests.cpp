@@ -34,7 +34,7 @@ TEST_CASE("SysInfo/DirChangeNotifier")
                 waitEvent.set();
                 return false;
             }
-            catch (XceptionFile& e)
+            catch (const XceptionFile& e)
             {
                 [[maybe_unused]] intptr_t code = e.code();
                 [[maybe_unused]] string errStr = e.errStr();

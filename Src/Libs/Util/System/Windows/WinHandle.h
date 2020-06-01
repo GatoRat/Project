@@ -75,7 +75,7 @@ public:
 
     DWORD WaitFor(DWORD timeoutMilliseconds = INFINITE) const;
     DWORD WaitFor(WinHandle& handle, DWORD timeoutMilliseconds = INFINITE, bool waitForAll = false) const;
-    DWORD WaitForMultiple(DWORD timeoutMilliseconds = INFINITE, WinHandle* pHandle1 = nullptr, WinHandle* pHandle2 = nullptr, WinHandle* pHandle3 = nullptr, bool waitForAll = false) const;
+    DWORD WaitForMultiple(DWORD timeoutMilliseconds = INFINITE, const WinHandle* pHandle1 = nullptr, const WinHandle* pHandle2 = nullptr, const WinHandle* pHandle3 = nullptr, bool waitForAll = false) const;
 
     /**
     */
@@ -90,7 +90,7 @@ public:
 class WinEvent : public WinHandle
 {
 public:
-    WinEvent(HANDLE hHandle = nullptr, bool dupHandle = false);
+    explicit WinEvent(HANDLE hHandle = nullptr, bool dupHandle = false);
     explicit WinEvent(BOOL manualReset, BOOL initState = FALSE, LPCTSTR pName = nullptr, PSECURITY_ATTRIBUTES pSA = nullptr);
 
     bool Create(BOOL manualReset = FALSE, BOOL initState = FALSE, LPCTSTR pName = nullptr, PSECURITY_ATTRIBUTES pSA = nullptr);
@@ -194,7 +194,7 @@ protected:
 class WinTimerQueue final
 {
 public:
-    WinTimerQueue(bool create = true);
+    explicit WinTimerQueue(bool create = true);
     WinTimerQueue(const WinTimerQueue&) = delete;
     void operator=(const WinTimerQueue&) = delete;
     ~WinTimerQueue();

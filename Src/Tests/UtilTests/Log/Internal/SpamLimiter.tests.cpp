@@ -57,7 +57,7 @@ TEST_CASE("Log/Internal/SpamLimiter")
                 {  1,  1, { 1, 1 }}
             };
 
-            for (auto& item : data)
+            for (const auto& item : data)
             {
                 SpamLimiterTest limiter(item.timeoutSeconds, item.maxItems);
 
@@ -91,7 +91,7 @@ TEST_CASE("Log/Internal/SpamLimiter")
                 {  2,  INT16_MAX, { 2, 3, 3 }}
             };
 
-            for (auto& item : data)
+            for (const auto& item : data)
             {
                 SpamLimiterTest limiter(8, 3);
 
@@ -126,7 +126,7 @@ TEST_CASE("Log/Internal/SpamLimiter")
                 { false, 10, { 0                }},
             };
 
-            for (auto& item : data)
+            for (const auto& item : data)
             {
                 SpamLimiterTest limiter(8, 3);
 
@@ -137,7 +137,7 @@ TEST_CASE("Log/Internal/SpamLimiter")
                 limiter.removeExpired(item.plusOne, item.curTime);
                 REQUIRE(limiter.getCache().size() == item.expected.cacheSize); //-V521
                 size_t index = 0;
-                for (auto& cacheItem : limiter.getCache())
+                for (const auto& cacheItem : limiter.getCache())
                 {
                     REQUIRE(cacheItem.first == item.expected.itemsLeft[index]); //-V521
                     ++index;

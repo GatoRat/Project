@@ -41,7 +41,7 @@ string JsonReadFileInsitu(const fs::path& pathname, rapidjson::Document& doc, bo
     return contents;
 }
 
-void JsonPrettyWriteFile(rapidjson::Document& doc, const fs::path& pathname, bool useTabs, unsigned spacesPerTab)
+void JsonPrettyWriteFile(const rapidjson::Document& doc, const fs::path& pathname, bool useTabs, unsigned spacesPerTab)
 {
     StdioFile file(pathname, L"wb");
 

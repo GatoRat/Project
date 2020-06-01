@@ -87,7 +87,7 @@ DWORD WinHandle::WaitFor(WinHandle& handle, DWORD timeout, bool waitForAll) cons
     return WaitForMultiple(timeout, &handle, nullptr, nullptr, waitForAll);
 }
 
-DWORD WinHandle::WaitForMultiple(DWORD timeoutMilliseconds, WinHandle* pHandle1, WinHandle* pHandle2, WinHandle* pHandle3, bool waitForAll) const
+DWORD WinHandle::WaitForMultiple(DWORD timeoutMilliseconds, const WinHandle* pHandle1, const WinHandle* pHandle2, const WinHandle* pHandle3, bool waitForAll) const
 {
     DWORD result = WAIT_FAILED;
 
@@ -455,6 +455,7 @@ WinTimerQueueTimerCallback::~WinTimerQueueTimerCallback()
 
 BOOL WinTimerQueueTimerCallback::Create(DWORD dueTime, DWORD period, TimerCallback timerCallback, HANDLE hTimerQueue, ULONG flags)
 {
+    _timerCallback = timerCallback;
     return WinTimerQueueTimer::Create(dueTime, period, WinTimerCallback, this, hTimerQueue, flags);
 }
 

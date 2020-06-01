@@ -18,7 +18,7 @@ TEST_CASE("Secure/AES")
             AES aes(nullptr, 16);
             FAIL("An exception should have been thrown.");
         }
-        catch (Xception&)
+        catch (const Xception&)
         { //-V565
         }
 
@@ -27,7 +27,7 @@ TEST_CASE("Secure/AES")
             AES aes(nullptr, 0);
             FAIL("An exception should have been thrown.");
         }
-        catch (Xception&)
+        catch (const Xception&)
         { //-V565
         }
 
@@ -36,7 +36,7 @@ TEST_CASE("Secure/AES")
             AES aes(pKey, 31);
             FAIL("An exception should have been thrown.");
         }
-        catch (Xception&)
+        catch (const Xception&)
         { //-V565
         }
 
@@ -44,7 +44,7 @@ TEST_CASE("Secure/AES")
         {
             AES aes(pKey, 32); //-V112
         }
-        catch (Xception&)
+        catch (const Xception&)
         {
             FAIL("An exception should NOT have been thrown.");
         }

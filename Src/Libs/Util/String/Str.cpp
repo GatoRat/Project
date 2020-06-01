@@ -1182,7 +1182,7 @@ namespace Str
             };
 
             size_t reserveLen = strToAppend.size() + formatString.size();
-            for (auto& str : strings)
+            for (const auto& str : strings)
             {
                 reserveLen += str.size();
             }

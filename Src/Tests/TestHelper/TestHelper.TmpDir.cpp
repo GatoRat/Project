@@ -53,7 +53,7 @@ namespace TestHelper
                 {
                     fs::create_directory(fullpath);
                 }
-                catch (fs::filesystem_error& e)
+                catch (const fs::filesystem_error& e)
                 {
                     cerr << "ERROR: " << e.code() << ": TmpDir::create: Could not create temp directory: '" << _fullpath << "'" << endl;
                     throw exception();

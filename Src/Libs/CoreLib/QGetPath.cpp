@@ -28,9 +28,9 @@ bool InitDirectories(QStringList& /*arguments*/, const char* pDocSubdir)
     downloadPath    = QString::fromWCharArray(SysGetPath::Download().wstring().c_str()) % QChar('/');
     tmpPath         = QString::fromWCharArray(SysGetPath::Tmp().wstring().c_str()) % QChar('/');
 
-    appDataPath     = QString::fromWCharArray(SysGetPath::AppData().wstring().c_str()) % QChar('/');;
-    roamingDataPath = QString::fromWCharArray(SysGetPath::RoamingData().wstring().c_str()) % QChar('/');;
-    programDataPath = QString::fromWCharArray(SysGetPath::ProgramData().wstring().c_str()) % QChar('/');;
+    appDataPath     = QString::fromWCharArray(SysGetPath::AppData().wstring().c_str()) % QChar('/');
+    roamingDataPath = QString::fromWCharArray(SysGetPath::RoamingData().wstring().c_str()) % QChar('/');
+    programDataPath = QString::fromWCharArray(SysGetPath::ProgramData().wstring().c_str()) % QChar('/');
 
     return true;
 }

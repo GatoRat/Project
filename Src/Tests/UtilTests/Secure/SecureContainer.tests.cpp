@@ -67,7 +67,7 @@ TEST_CASE("Secure/SecureContainer")
                 REQUIRE_FALSE(data.empty()); //-V521
                 REQUIRE(memcmp(data.data(), "data", 4) == 0); //-V112 //-V521
             }
-            catch (exception&)
+            catch (const exception&)
             {
                 FAIL("unexpected exception");
             }
@@ -83,7 +83,7 @@ TEST_CASE("Secure/SecureContainer")
                 REQUIRE_FALSE(data.empty()); //-V521
                 REQUIRE(memcmp(data.data(), "data", 4) == 0); //-V112 //-V521
             }
-            catch (exception&)
+            catch (const exception&)
             {
                 FAIL("unexpected exception");
             }

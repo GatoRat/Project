@@ -16,5 +16,5 @@ void JsonReadFile(const fs::path& pathname, rapidjson::Document& doc, bool parse
 */
 std::string JsonReadFileInsitu(const fs::path& pathname, rapidjson::Document& doc, bool parseIfEmpty = true);
 
-void JsonPrettyWriteFile(rapidjson::Document& doc, const fs::path& pathname, bool useTabs = false, unsigned spacesPerTab = 2);
+void JsonPrettyWriteFile(const rapidjson::Document& doc, const fs::path& pathname, bool useTabs = false, unsigned spacesPerTab = 2);
 void JsonWriteFile(const char* pJsonStr, const fs::path& pathname, bool prettyWrite = true, bool useTabs = false, unsigned spacesPerTab = 2);

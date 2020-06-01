@@ -92,12 +92,12 @@ namespace SecureContainer
 #pragma pack(pop)
 
     void Encode(
-        const void*      pData,
-        int32_t          dataLen,
-        vector<uint8_t>& encodedData,
-        const uint8_t*   pKey,
-        ICompressor*     pCompressor,
-        int32_t          minCompressLen)
+        const void*         pData,
+        int32_t             dataLen,
+        vector<uint8_t>&    encodedData,
+        const uint8_t*      pKey,
+        const  ICompressor* pCompressor,
+        int32_t             minCompressLen)
     {
         encodedData.resize(0);
 
@@ -147,21 +147,21 @@ namespace SecureContainer
     }
 
     void Encode(
-        const string&    str,
-        vector<uint8_t>& encodedData,
-        const uint8_t*   pKey,
-        ICompressor*     pCompressor,
-        int32_t          minCompressLen)
+        const string&      str,
+        vector<uint8_t>&   encodedData,
+        const uint8_t*     pKey,
+        const ICompressor* pCompressor,
+        int32_t            minCompressLen)
     {
         return Encode(str.c_str(), static_cast<int32_t>(str.size() + 1), encodedData, pKey, pCompressor, minCompressLen);
     }
 
     vector<uint8_t> Encode(
-        const void*    pData,
-        int32_t        dataLen,
-        const uint8_t* pKey,
-        ICompressor*   pCompressor,
-        int32_t        minCompressLen)
+        const void*        pData,
+        int32_t            dataLen,
+        const uint8_t*     pKey,
+        const ICompressor* pCompressor,
+        int32_t            minCompressLen)
     {
         vector<uint8_t> data;
         Encode(pData, dataLen, data, pKey, pCompressor, minCompressLen);
@@ -169,32 +169,32 @@ namespace SecureContainer
     }
 
     void Encode(
-        const fs::path& pathname,
-        const void*     pData,
-        int32_t         dataLen,
-        const uint8_t*  pKey,
-        ICompressor*    pCompressor,
-        int32_t         minCompressLen)
+        const fs::path&    pathname,
+        const void*        pData,
+        int32_t            dataLen,
+        const uint8_t*     pKey,
+        const ICompressor* pCompressor,
+        int32_t            minCompressLen)
     {
         vector<uint8_t> encodedData = Encode(pData, dataLen, pKey, pCompressor, minCompressLen);
         FastWriteFile(pathname, encodedData.data(), static_cast<uint32_t>(encodedData.size()));
     }
 
     vector<uint8_t> Encode(
-        const string&  str,
-        const uint8_t* pKey,
-        ICompressor*   pCompressor,
-        int32_t        minCompressLen)
+        const string&      str,
+        const uint8_t*     pKey,
+        const ICompressor* pCompressor,
+        int32_t            minCompressLen)
     {
         return Encode(str.c_str(), static_cast<int32_t>(str.size() + 1), pKey, pCompressor, minCompressLen);
     }
 
     void Encode(
-        const fs::path& pathname,
-        const string&   str,
-        const uint8_t*  pKey,
-        ICompressor*    pCompressor,
-        int32_t         minCompressLen)
+        const fs::path&    pathname,
+        const string&      str,
+        const uint8_t*     pKey,
+        const ICompressor* pCompressor,
+        int32_t            minCompressLen)
     {
         return Encode(pathname, str.c_str(), static_cast<int32_t>(str.size() + 1), pKey, pCompressor, minCompressLen);
     }

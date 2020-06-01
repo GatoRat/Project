@@ -324,21 +324,20 @@ string CsvCell::toString() const
 
 string CsvCell::toString(size_t column)
 {
-    char str[4]; //-V112
-    memset(str, 0, sizeof(str));
-    size_t index = sizeof(str) - 1;
+    string columnStr;
 
     ++column;
 
     do
     {
         --column;
-        str[--index] = static_cast<char>(column % 26 + 'A');
+        columnStr += static_cast<char>(column % 26 + 'A');
         column /= 26;
 
     } while (column);
 
-    return string(&str[index]);
+    reverse(columnStr.begin(), columnStr.end());
+    return columnStr;
 }
 
 string CsvCell::toString(size_t column, size_t row)

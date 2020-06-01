@@ -85,7 +85,7 @@ TEST_CASE("Graphics")
                 { { 1, 2, 3, 4 }, false }
             };
 
-            for (auto& test : testData)
+            for (const auto& test : testData)
             {
                 REQUIRE(test.rect.isEmpty() == test.expected); //-V521
             }
@@ -108,7 +108,7 @@ TEST_CASE("Graphics")
                 { { 0, 0, 1, 0 }, { 0, 0, 0, 1 }, false }
             };
 
-            for (auto& test : testData)
+            for (const auto& test : testData)
             {
                 bool result = test.rect1 == test.rect2;
                 REQUIRE(result == test.expected); //-V521
@@ -191,7 +191,7 @@ TEST_CASE("Graphics")
                 { { 1.0f, 2.0f, 3.0f, 4.0f }, false }
             };
 
-            for (auto& test : testData)
+            for (const auto& test : testData)
             {
                 REQUIRE(test.rect.isEmpty() == test.expected); //-V521
             }
@@ -214,7 +214,7 @@ TEST_CASE("Graphics")
                 { { 0.0f, 0.0f, 1.0f, 0.0f }, { 0.0f, 0.0f, 0.0f, 1.0f }, false }
             };
 
-            for (auto& test : testData)
+            for (const auto& test : testData)
             {
                 bool result = test.rect1 == test.rect2;
                 REQUIRE(result == test.expected); //-V521

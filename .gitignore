@@ -4,7 +4,9 @@
 
 ~*
 .vs
+.scannerwork
 Build
+bw-output
 cov-int
 *.vcxproj.user
 !CoreFit.vcxproj.user

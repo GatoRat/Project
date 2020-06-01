@@ -37,7 +37,7 @@ TEST_CASE("Json/JsonPath")
             { "/p1//p2/val//", { "p1", "p2", "val" } },
         };
 
-        for (auto& entry : data)
+        for (const auto& entry : data)
         {
             JsonPath jsonPath(entry.param);
             REQUIRE(jsonPath.size() == entry.expected.size()); //-V521
@@ -88,7 +88,7 @@ TEST_CASE("Json/JsonPath")
             { "/p1"       , "p2/val/"  , { "p1", "p2", "val" } },
         };
 
-        for (auto& entry : data)
+        for (const auto& entry : data)
         {
             JsonPath jsonPath(entry.param1, entry.param2);
             REQUIRE(jsonPath.size() == entry.expected.size()); //-V521
@@ -158,7 +158,7 @@ TEST_CASE("Json/JsonPath")
             { "/p1/p2/val//" , "val" },
         };
 
-        for (auto& entry : data)
+        for (const auto& entry : data)
         {
             REQUIRE(JsonPath::GetLastToken(entry.param) == entry.expected); //-V521
         }
@@ -301,7 +301,7 @@ R"J({
             { "/p1/val/sheets/", { "p1.val"   , true  } },
         };
 
-        for (auto& entry : data)
+        for (const auto& entry : data)
         {
             auto filename = JsonPath(entry.param).toFilename();
             REQUIRE(filename.filename == entry.expected.filename); //-V521

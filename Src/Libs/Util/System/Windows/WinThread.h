@@ -24,7 +24,7 @@ public:
     bool Create(int priority = -1, bool startSuspended = false, unsigned stackSize = 0);
     bool Create(PWTHREAD_FUNCTION pThread, void* pParam, int priority = -1, bool startSuspended = false, unsigned stackSize = 0);
 
-	virtual int EndThread(DWORD timeOut = 0, bool forceTerminate = false, DWORD exitCode = 0) const;
+    virtual int EndThread(DWORD timeOut = 0, bool forceTerminate = false, DWORD exitCode = 0) const;
 
     BOOL ForceTerminate(DWORD exitCode = 0) const;
 
@@ -59,7 +59,7 @@ public:
     bool IsEndThreadEventSet(DWORD timeout = 0) const;
     bool KeepRunning(DWORD timeout = 0) const;
 
-	int EndThread(DWORD timeOut = 0, bool forceTerminate = true, DWORD exitCode = 0) const override;
+    int EndThread(DWORD timeOut = 0, bool forceTerminate = true, DWORD exitCode = 0) const override;
 
 protected:
     WinEvent _endThreadEvent;

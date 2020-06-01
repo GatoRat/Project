@@ -36,6 +36,7 @@ namespace Convert
                 digitGroupCount = 0;
                 *--pBuffer = groupSeparatorChar;
             }
+
         } while (val);
 
         if (isNeg)
@@ -62,6 +63,7 @@ namespace Convert
             do
             {
                 pBuffer[i] = pResult[i];
+
             } while (pBuffer[i++]);
 
             if (pEnd)
@@ -126,7 +128,7 @@ namespace Convert
         char* pStr = ToStr64(val, pBuffer, groupSeparatorChar, isNeg, &pEnd);
 
         int width = minWidth - static_cast<int>(pEnd - pStr);
-        if (padChar && width > 0 && pStr != pBuffer)
+        if (padChar && width > 0 && pStr > pBuffer)
         {
             if (isNeg)
             {
@@ -217,7 +219,7 @@ namespace Convert
             {
                 pStr[--tmpWidth] = static_cast<char>((val % BASE_TEN) + ASCII::Zero);
                 val /= BASE_TEN;
-            };
+            }
 
             memset(pStr, ASCII::Zero, tmpWidth);
             pStr += width;
@@ -236,7 +238,7 @@ namespace Convert
             {
                 pDst[--width] = static_cast<char>((val % BASE_TEN) + ASCII::Zero);
                 val /= BASE_TEN;
-            };
+            }
         }
         return str;
     }

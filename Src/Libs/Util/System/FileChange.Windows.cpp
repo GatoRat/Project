@@ -112,6 +112,6 @@ bool FileChange::waitForChange() //-V2506
 
 void FileChange::close()
 {
-    FileChangeData* pData = reinterpret_cast<FileChangeData*>(_data.get());
+    const FileChangeData* pData = reinterpret_cast<const FileChangeData*>(_data.get());
     ::SetEvent(pData->handles[0]);
 }

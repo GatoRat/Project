@@ -59,7 +59,7 @@ QStringRef Arguments::GetCurArgStringRef() const
 
 int Arguments::GetCurArgValue(int defaultValue)
 {
-    int value;
+    int value = 0;
     GetValue(value, defaultValue);
     return value;
 }
@@ -73,12 +73,9 @@ bool Arguments::GetBool(bool defaultVal, bool strict)
 
     char ch = _args[_curArg][_curArgOffset].toLatin1(); //-V108
 
-    if (strict)
+    if (strict && ch != '-' && ch != '+')
     {
-        if (ch != '-' && ch != '+')
-        {
-            return defaultVal;
-        }
+        return defaultVal;
     }
 
     ++_curArgOffset;

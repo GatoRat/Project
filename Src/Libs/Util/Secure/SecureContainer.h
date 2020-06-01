@@ -87,14 +87,14 @@ namespace SecureContainer
 
     /////////////////////////////////////////////////////////////////////////
 
-    void Encode(const void* pData, int32_t dataLen, std::vector<uint8_t>& encodedData, const uint8_t* pKey, ICompressor* pCompressor, int32_t minCompressLen = MinCompressLen);
-    void Encode(const std::string& str, std::vector<uint8_t>& encodedData, const uint8_t* pKey, ICompressor* pCompressor, int32_t minCompressLen = MinCompressLen);
+    void Encode(const void* pData, int32_t dataLen, std::vector<uint8_t>& encodedData, const uint8_t* pKey, const ICompressor* pCompressor, int32_t minCompressLen = MinCompressLen);
+    void Encode(const std::string& str, std::vector<uint8_t>& encodedData, const uint8_t* pKey, const ICompressor* pCompressor, int32_t minCompressLen = MinCompressLen);
 
-    std::vector<uint8_t> Encode(const void* pData, int32_t dataLen, const uint8_t* pKey, ICompressor* pCompressor, int32_t minCompressLen = MinCompressLen);
+    std::vector<uint8_t> Encode(const void* pData, int32_t dataLen, const uint8_t* pKey, const ICompressor* pCompressor, int32_t minCompressLen = MinCompressLen);
     void                 Encode(const fs::path& pathname, const void* pData, int32_t dataLen, const uint8_t* pKey, ICompressor* pCompressor, int32_t minCompressLen = MinCompressLen);
 
-    std::vector<uint8_t> Encode(const std::string& str, const uint8_t* pKey, ICompressor* pCompressor, int32_t minCompressLen = MinCompressLen);
-    void                 Encode(const fs::path& pathname, const std::string& str, const uint8_t* pKey, ICompressor* pCompressor, int32_t minCompressLen = MinCompressLen);
+    std::vector<uint8_t> Encode(const std::string& str, const uint8_t* pKey, const ICompressor* pCompressor, int32_t minCompressLen = MinCompressLen);
+    void                 Encode(const fs::path& pathname, const std::string& str, const uint8_t* pKey, const ICompressor* pCompressor, int32_t minCompressLen = MinCompressLen);
 
     /** Loads and decodes a SecureContainer file.
         @param pathname The filename to load.

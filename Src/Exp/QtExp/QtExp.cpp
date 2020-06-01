@@ -7,9 +7,9 @@ int main(int argc, char *argv[])
 {
 	QCoreApplication application(argc, argv);
 
-	application.setApplicationVersion("0.1.2.3");
-	application.setOrganizationDomain("gamingarts.com");
-	application.setOrganizationName("Gaming Arts, LLC");
+	QCoreApplication::setApplicationVersion("0.1.2.3");
+	QCoreApplication::setOrganizationDomain("gamingarts.com");
+	QCoreApplication::setOrganizationName("Gaming Arts, LLC");
 
 
     QTime t;

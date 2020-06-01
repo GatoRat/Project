@@ -240,7 +240,7 @@ namespace WICImaging
                     }
                 }
             }
-            catch (XceptionT<HRESULT>&)
+            catch (const XceptionT<HRESULT>&)
             {
                 reset();
                 throw;

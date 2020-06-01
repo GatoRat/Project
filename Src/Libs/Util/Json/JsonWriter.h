@@ -31,7 +31,7 @@ protected:
 
 public:
 
-    JsonWriter(bool startObject = true)
+    explicit JsonWriter(bool startObject = true)
         : rapidjson::Writer<rapidjson::StringBuffer>(buffer) //-V1050
     {
         if (startObject)

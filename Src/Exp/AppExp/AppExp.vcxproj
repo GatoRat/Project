@@ -72,7 +72,7 @@
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <AdditionalIncludeDirectories>$(SolutionDir)ThirdParty;$(SolutionDir)Src\Libs;$(QTDIR)\include;$(QTDIR)\include\QtCore;$(IntDir)GeneratedFiles;$(SolutionDir)Build\GeneratedFiles;$(QTDIR)\include\QtNetwork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <LanguageStandard>stdcpp17</LanguageStandard>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <Optimization>Disabled</Optimization>
     </ClCompile>

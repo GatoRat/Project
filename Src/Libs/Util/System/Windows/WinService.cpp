@@ -613,7 +613,7 @@ void WinService::stopService(bool deleteService) const
             serviceHandle.deleteService();
         }
     }
-    catch (Xception& e)
+    catch (const Xception& e)
     {
         if (e.code() == ERROR_ACCESS_DENIED)
         {
@@ -635,7 +635,7 @@ void WinService::startService() const
         WinServiceHandle serviceHandle(getServiceName());
         serviceHandle.startServiceWait(&cout);
     }
-    catch (Xception& e)
+    catch (const Xception& e)
     {
         if (e.code() == ERROR_ACCESS_DENIED)
         {

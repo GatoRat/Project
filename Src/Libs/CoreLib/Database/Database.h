@@ -55,6 +55,7 @@ public:
     DbQuery();
     DbQuery(const QString& query, const char* pFile, const char* pFunction, int line, const char* pInfo = nullptr);
 
+    // These hide base exec() by design
     bool exec(const QString& query, const char* pFile, const char* pFunction, int line, const char* pInfo = nullptr);
     bool exec(const QString& query, const char* pFile, const char* pFunction, int line, const InfoCallback& infoCallback);
 };

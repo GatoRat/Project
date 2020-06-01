@@ -34,7 +34,7 @@ TEST_CASE("Util/ConvertW[Number]::ToStr")
             memset(buffer, 'z', sizeof(buffer));
 
             wchar_t* pEnd = nullptr;
-            wchar_t* pStr = ConvertW::ToStr64U(item.val, buffer, item.groupSeparator, item.isNegative, &pEnd);
+            const wchar_t* pStr = ConvertW::ToStr64U(item.val, buffer, item.groupSeparator, item.isNegative, &pEnd);
 
             REQUIRE(wstring_view(pStr) == item.expected.pStr); //-V521
             REQUIRE(static_cast<size_t>(pEnd - pStr) == wcslen(pStr)); //-V814 //-V521
@@ -65,7 +65,7 @@ TEST_CASE("Util/ConvertW[Number]::ToStr")
             wchar_t buffer[ConvertW::MaxStrLen64_Commas_Signed + 2];
             memset(buffer, 'z', sizeof(buffer));
 
-            wchar_t* pStr = ConvertW::ToStrAligned64U(item.val, buffer, item.groupSeparator, item.isNegative, nullptr);
+            const wchar_t* pStr = ConvertW::ToStrAligned64U(item.val, buffer, item.groupSeparator, item.isNegative, nullptr);
 
             REQUIRE(wstring_view(pStr) == item.expected.pStr); //-V521
             REQUIRE(wstring_view(buffer) == item.expected.pStr); //-V521
@@ -141,7 +141,7 @@ TEST_CASE("Util/ConvertW[Number]::ToStr")
             memset(buffer, L'z', sizeof(buffer));
 
             wchar_t* pEnd = nullptr;
-            wchar_t* pStr = ConvertW::ToStrPadded64U(item.val, buffer, item.width, item.padChar, item.groupSeparator, item.isNegative, &pEnd);
+            const wchar_t* pStr = ConvertW::ToStrPadded64U(item.val, buffer, item.width, item.padChar, item.groupSeparator, item.isNegative, &pEnd);
 
             REQUIRE(wstring_view(pStr) == item.expected.pStr); //-V521
             REQUIRE(static_cast<size_t>(pEnd - pStr) == wcslen(pStr)); //-V814 //-V521

@@ -37,7 +37,7 @@ TEST_CASE("Secure/CryptHashPassword")
 
             REQUIRE(foundNonZero); //-V521
         }
-        catch (Xception&)
+        catch (const Xception&)
         {
             FAIL("Unexpected Exception");
         }

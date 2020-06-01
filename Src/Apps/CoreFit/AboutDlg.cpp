@@ -61,6 +61,7 @@ void AboutDlg::on_closeButton_clicked()
 
 void AboutDlg::on_licenseButton_clicked()
 {
+    // to be implemented
 }
 
 void AboutDlg::on_sendLogsButton_clicked()

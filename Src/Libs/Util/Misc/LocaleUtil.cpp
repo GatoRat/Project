@@ -18,7 +18,7 @@ namespace Locale
     {
     }
 
-    NumFacet::NumFacet(locale* pLocale)
+    NumFacet::NumFacet(const locale* pLocale)
         : loc(pLocale && has_facet<numpunct<char>>(*pLocale) ? pLocale->name() : Locale::pDefault)
         , facet(use_facet<numpunct<char>>(loc))
     {
@@ -29,7 +29,7 @@ namespace Locale
     {
     }
 
-    MoneyFacet::MoneyFacet(locale* pLocale)
+    MoneyFacet::MoneyFacet(const locale* pLocale)
         : loc(pLocale && has_facet<moneypunct<char>>(*pLocale) ? pLocale->name() : Locale::pDefault)
         , facet(use_facet<moneypunct<char>>(loc))
     {

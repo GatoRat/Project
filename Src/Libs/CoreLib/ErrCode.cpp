@@ -281,33 +281,33 @@ void Exception::LogString(string_view string) const
 
 ///////////////////////////////////////////////////////////////////////////
 
-FileException::FileException(const QString& pathname_, QFileDevice::FileError fileError_, ErrCode code,
-    const char* pCause, const char* pFile, const char* pFunction, int line)
-    : Exception(code, pCause, pFile, pFunction, line)
+FileException::FileException(const QString& pathname_, QFileDevice::FileError fileError_, ErrCode code_,
+    const char* pCause_, const char* pFile_, const char* pFunction_, int line_)
+    : Exception(code_, pCause_, pFile_, pFunction_, line_)
     , pathname(pathname_)
     , fileError(fileError_)
 {
 }
 
-FileException::FileException(const QString& pathname_, QFileDevice::FileError fileError_, ErrCode code,
-    const char* pFile, const char* pFunction, int line)
-    : Exception(code, pFile, pFunction, line)
+FileException::FileException(const QString& pathname_, QFileDevice::FileError fileError_, ErrCode code_,
+    const char* pFile_, const char* pFunction_, int line_)
+    : Exception(code_, pFile_, pFunction_, line_)
     , pathname(pathname_)
     , fileError(fileError_)
 {
 }
 
-FileException::FileException(const QFileDevice& file, ErrCode code, const char* pFile, const char* pFunction, int line)
-    : Exception(code, pFile, pFunction, line)
+FileException::FileException(const QFileDevice& file, ErrCode code_, const char* pFile_, const char* pFunction_, int line_)
+    : Exception(code_, pFile_, pFunction_, line_)
     , pathname(file.fileName())
     , fileError(file.error())
 {
 }
 
-FileException::FileException(const QDataStream& stream, ErrCode code, const char* pFile, const char* pFunction, int line)
-    : Exception(code, pFile, pFunction, line)
+FileException::FileException(const QDataStream& stream, ErrCode code_, const char* pFile_, const char* pFunction_, int line_)
+    : Exception(code_, pFile_, pFunction_, line_)
 {
-    QFileDevice* pFileDevice = qobject_cast<QFileDevice*>(stream.device());
+    const QFileDevice* pFileDevice = qobject_cast<const QFileDevice*>(stream.device());
     if (pFileDevice)
     {
         pathname  = pFileDevice->fileName();
@@ -351,14 +351,14 @@ void FileException::Log(const char* pCatchInfo) const
 
 ///////////////////////////////////////////////////////////////////////////
 
-DbException::DbException(const QSqlQuery* pQuery, ErrCode code, const char* pCause, const char* pFile, const char* pFunction, int line)
-    : Exception(code, pCause, pFile, pFunction, line)
+DbException::DbException(const QSqlQuery* pQuery, ErrCode code_, const char* pCause_, const char* pFile_, const char* pFunction_, int line_)
+    : Exception(code_, pCause_, pFile_, pFunction_, line_)
     , queryErrStr(DbCreateErrorStr(pQuery))
 {
 }
 
-DbException::DbException(const QSqlQuery* pQuery, ErrCode code, const char* pFile, const char* pFunction, int line)
-    : Exception(code, pFile, pFunction, line)
+DbException::DbException(const QSqlQuery* pQuery, ErrCode code_, const char* pFile_, const char* pFunction_, int line_)
+    : Exception(code_, pFile_, pFunction_, line_)
     , queryErrStr(DbCreateErrorStr(pQuery))
 {
 }

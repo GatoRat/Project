@@ -75,9 +75,9 @@ int main(int argc, char *argv[])
     AppInfo::SetVersion(VER_MAJOR, VER_MINOR, VER_BUILD, VER_REVISION);
     AppInfo::SetProduct(VER_COMPANYNAME_STR, VER_PRODUCTNAME_STR);
 
-    application.setApplicationVersion(VER_VERSION_STR);
-    application.setOrganizationDomain(VER_COMPANYDOMAIN_STR);
-    application.setOrganizationName(VER_COMPANYNAME_STR);
+    QApplication::setApplicationVersion(VER_VERSION_STR);
+    QApplication::setOrganizationDomain(VER_COMPANYDOMAIN_STR);
+    QApplication::setOrganizationName(VER_COMPANYNAME_STR);
 
     QStringList arguments = QCoreApplication::arguments();
     arguments.removeFirst();
@@ -116,7 +116,7 @@ int main(int argc, char *argv[])
         {
             MainWindow mainWindow(pathname);
             mainWindow.show();
-            result = application.exec();
+            result = QApplication::exec();
             DbClose();
         }
     }

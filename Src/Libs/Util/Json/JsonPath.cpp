@@ -33,7 +33,7 @@ string_view JsonPath::operator[](size_t index) const //-V2506
     {
         return _tokens.at(index);
     }
-    catch (out_of_range&)
+    catch (const out_of_range&)
     {
         static string_view emptyView;
         return emptyView;

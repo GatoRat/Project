@@ -405,9 +405,6 @@
     <ClInclude Include="Time\Stopwatch.h">
       <Filter>Time</Filter>
     </ClInclude>
-    <ClInclude Include="Secure\SecureContainerOrg.h">
-      <Filter>Secure</Filter>
-    </ClInclude>
     <ClInclude Include="Secure\SecureContainer.h">
       <Filter>Secure</Filter>
     </ClInclude>
@@ -709,9 +706,6 @@
     </ClCompile>
     <ClCompile Include="File\SuperBasicFile.Win32.cpp">
       <Filter>File</Filter>
-    </ClCompile>
-    <ClCompile Include="Secure\SecureContainerOrg.cpp">
-      <Filter>Secure</Filter>
     </ClCompile>
     <ClCompile Include="Secure\SecureContainer.cpp">
       <Filter>Secure</Filter>

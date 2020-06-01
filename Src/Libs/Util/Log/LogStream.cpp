@@ -27,7 +27,7 @@ LogStream::~LogStream()
     {
         _stream.rdbuf(_pOrgBuf);
     }
-    catch (ios_base::failure&) // swallow exception
+    catch (const ios_base::failure&) // swallow exception
     {
     }
 }

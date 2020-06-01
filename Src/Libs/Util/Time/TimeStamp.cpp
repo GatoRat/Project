@@ -117,7 +117,7 @@ void TimeStamp::set(Set setVal)
         case Set::ToMax:
             val = UINT64_MAX;
             break;
-    };
+    }
 }
 
 void TimeStamp::set(uint16_t year, uint8_t mon, uint8_t day, uint8_t hour, uint8_t min, uint8_t sec, uint16_t msec)

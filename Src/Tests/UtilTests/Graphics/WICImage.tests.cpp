@@ -171,7 +171,7 @@ TEST_CASE("WICImage")
             {{ 2, 2 }, &orgPixels4[1][0], { 0, 0, 2, 2 }},
         };
 
-        for (auto& test : data)
+        for (const auto& test : data)
         {
             ImageData srcImage(test.size, test.pPixels);
 
@@ -270,7 +270,7 @@ TEST_CASE("WICImage")
             {{ 2, 2 }, &orgPixels4[1][0], { 0, 0, 2, 2 }},
         };
 
-        for (auto& test : data)
+        for (const auto& test : data)
         {
             ImageData image(test.size, test.pPixels);
             image.crop(test.cropRect);
@@ -353,7 +353,7 @@ TEST_CASE("WICImage")
             {{ 2, 2 }, &orgPixels4[1][0], { 0, 0, 2, 2 }},
         };
 
-        for (auto& test : data)
+        for (const auto& test : data)
         {
             ImageData image(test.size, test.pPixels);
             Rect trimRect = image.getTrimRect();

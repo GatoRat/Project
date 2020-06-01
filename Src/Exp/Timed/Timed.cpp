@@ -74,7 +74,7 @@ int main(int argc, char* argv[])
         RunTimedTests(numTests, loopsPerTest, false);
         result = 0;
     }
-    catch (Xception& e)
+    catch (const Xception& e)
     { //-V565
 
         cerr << e << endl;

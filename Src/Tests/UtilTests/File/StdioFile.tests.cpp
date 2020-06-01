@@ -21,7 +21,7 @@ TEST_CASE("File/StdioFile")
             StdioFile file(pathname, L"rb");
             FAIL("XceptionFile should have been thrown");
         }
-        catch (XceptionFile&)
+        catch (const XceptionFile&)
         { //-V565
         }
     }
@@ -38,7 +38,7 @@ TEST_CASE("File/StdioFile")
             FILE* pFile = file;
             REQUIRE(pFile != nullptr); //-V521
         }
-        catch (XceptionFile&)
+        catch (const XceptionFile&)
         {
             FAIL("XceptionFile should NOT have been thrown");
         }

@@ -6,7 +6,7 @@
 #include <utility>
 #include "WinHandle.h"
 
-char WinConsoleGetChar(WinEvent& shutdownEvent);
+char WinConsoleGetChar(const WinEvent& shutdownEvent);
 
 ///////////////////////////////////////////////////////////////////////////
 
@@ -16,7 +16,7 @@ class WinConsoleCtrlHandler : public WinEvent
 {
 public:
     WinConsoleCtrlHandler();
-    explicit WinConsoleCtrlHandler(WinEvent& shutdownEvent);
+    explicit WinConsoleCtrlHandler(const WinEvent& shutdownEvent);
     ~WinConsoleCtrlHandler();
 
     static WinEvent _appClosed;

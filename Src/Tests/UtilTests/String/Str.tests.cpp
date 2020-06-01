@@ -1342,7 +1342,7 @@ TEST_CASE("Util/Str::NormalizeString")
             { " \r\n 12\t \t bc ", "12 bc" }
         };
 
-        for (auto& item : data)
+        for (const auto& item : data)
         {
             string result = Str::NormalizeString(item.pStr);
             REQUIRE(result == item.pExpected); //-V521
@@ -1371,7 +1371,7 @@ TEST_CASE("Util/Str::NormalizeString(string_view)")
         { " \r\n 12\t \t bc ", "12 bc" }
     };
 
-    for (auto& item : data)
+    for (const auto& item : data)
     {
         string result = Str::NormalizeString(item.str);
         REQUIRE(result == item.pExpected); //-V521
@@ -1392,7 +1392,7 @@ TEST_CASE("Util/Str::ToQuotedString")
         { "abc"  , "\"abc\""    },
     };
 
-    for (auto& item : data)
+    for (const auto& item : data)
     {
         auto result = Str::ToQuotedString(item.pStr);
         REQUIRE(result == item.expected); //-V521
@@ -1412,7 +1412,7 @@ TEST_CASE("Util/Str::ToQuotedString2")
         { "abc"  , "\"abc\""    },
     };
 
-    for (auto& item : data)
+    for (const auto& item : data)
     {
         REQUIRE(Str::ToQuotedString2(item.pStr) == item.expected); //-V521
     }
@@ -1441,7 +1441,7 @@ TEST_CASE("Util/Str::Format")
         { "{{1", "A", "B", "C", "D", "E", "F", "{{1" },
     };
 
-    for (auto& item : data)
+    for (const auto& item : data)
     {
         string result = Str::Format(item.formatString,
                                     item.pStr0, item.pStr1, item.pStr2, item.pStr3, item.pStr4, item.pStr5);
@@ -1469,7 +1469,7 @@ TEST_CASE("Util/Str::Format3")
         { "{{1", "A", "B", "C", "{{1" },
     };
 
-    for (auto& item : data)
+    for (const auto& item : data)
     {
         string result = Str::Format3(item.formatString, item.str0, item.str1, item.str2);
         REQUIRE(result == item.expected); //-V521

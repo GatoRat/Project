@@ -254,6 +254,7 @@ namespace Graphics
 
         Pixel() = default;
 
+        // Deliberately not explicit
         constexpr Pixel(uint32_t val_)
             : val{ val_ }
         {

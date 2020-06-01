@@ -16,7 +16,7 @@ namespace Locale
 
         // This will throw a base_cast exception if the global locale does not have the numpunct facet.
         NumFacet();
-        explicit NumFacet(std::locale* pLocale);
+        explicit NumFacet(const std::locale* pLocale);
         NumFacet(const NumFacet&) = delete;
         void operator=(const NumFacet&) = delete;
         ~NumFacet() = default;
@@ -29,7 +29,7 @@ namespace Locale
 
         // This will throw a base_cast exception if the global locale does not have the moneypunct facet.
         MoneyFacet();
-        explicit MoneyFacet(std::locale* pLocale);
+        explicit MoneyFacet(const std::locale* pLocale);
         MoneyFacet(const MoneyFacet&) = delete;
         void operator=(const MoneyFacet&) = delete;
         ~MoneyFacet() = default;

@@ -88,7 +88,7 @@ TEST_CASE("TimeStamp")
             { { 45, 30,  2, 11, 3, 118, 0, 0, 0 },{ 45, 30,  2, 11, 3, 118, 0, 0, 1 },  0 }, // Note that there is no such time
         };
 
-        for (auto& item : data)
+        for (const auto& item : data)
         {
             TimeStamp left(item.left);
             TimeStamp right(item.right);
@@ -202,7 +202,7 @@ TEST_CASE("TimeStamp")
             { TimeStamp::UseMilliseconds, "2019-01-02 03:04:05.006" },
         };
 
-        for (auto& item : data)
+        for (const auto& item : data)
         {
             REQUIRE(ts.toStr(item.style) == item.pExpected); //-V521
         }

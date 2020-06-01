@@ -23,7 +23,7 @@ void TempFolder::setPath(fs::path path, uint64_t hoursToKeep)
         fs::create_directory(path);
         _path = move(path);
     }
-    catch (exception&)
+    catch (const exception&)
     {
         _path = SysGetPath::Desktop();
     }

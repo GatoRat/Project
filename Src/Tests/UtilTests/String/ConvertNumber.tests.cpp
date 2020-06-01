@@ -34,7 +34,7 @@ TEST_CASE("Util/Convert[Number]::ToStr")
             memset(buffer, 'z', sizeof(buffer));
 
             char* pEnd = nullptr;
-            char* pStr = Convert::ToStr64(item.val, buffer, item.groupSeparator, item.isNegative, &pEnd);
+            const char* pStr = Convert::ToStr64(item.val, buffer, item.groupSeparator, item.isNegative, &pEnd);
 
             REQUIRE(string_view(pStr) == item.expected.pStr); //-V521
             REQUIRE(static_cast<size_t>(pEnd - pStr) == strlen(pStr)); //-V814 //-V521
@@ -65,7 +65,7 @@ TEST_CASE("Util/Convert[Number]::ToStr")
             char buffer[Convert::MaxStrLen64_Commas_Signed + 2];
             memset(buffer, 'z', sizeof(buffer));
 
-            char* pStr = Convert::ToStrAligned64(item.val, buffer, item.groupSeparator, item.isNegative, nullptr);
+            const char* pStr = Convert::ToStrAligned64(item.val, buffer, item.groupSeparator, item.isNegative, nullptr);
 
             REQUIRE(string_view(pStr) == item.expected.pStr); //-V521
             REQUIRE(string_view(buffer) == item.expected.pStr); //-V521
@@ -141,7 +141,7 @@ TEST_CASE("Util/Convert[Number]::ToStr")
             memset(buffer, 'z', sizeof(buffer));
 
             char* pEnd = nullptr;
-            char* pStr = Convert::ToStr64Padded(item.val, buffer, item.width, item.padChar, item.groupSeparator, item.isNegative, &pEnd);
+            const char* pStr = Convert::ToStr64Padded(item.val, buffer, item.width, item.padChar, item.groupSeparator, item.isNegative, &pEnd);
 
             REQUIRE(string_view(pStr) == item.expected.pStr); //-V521
             REQUIRE(static_cast<size_t>(pEnd - pStr) == strlen(pStr)); //-V814 //-V521
