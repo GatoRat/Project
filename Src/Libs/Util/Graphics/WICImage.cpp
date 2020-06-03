@@ -477,6 +477,7 @@ namespace WICImaging
                 }
             }
 
+            //  deepcode ignore DivisionByZero: if _pixels has a size, width can't be zero
             const size_t topRow = first / _size.width;                       //-V104
             const size_t bottomRow = (last + _size.width - 1) / _size.width; //-V104
 
