@@ -8,8 +8,8 @@ QString MakeKeywordQuery(const QString& keywords);
 struct DbMakeKeywordStr
 {
     QSet<QString> _seen;
-    QString		  _keywordStr;
-    bool		  _firstTag = true;
+    QString       _keywordStr;
+    bool          _firstTag = true;
 
     // Pass the primary pipe delimeted keyword string. Must already be simplified and lower case: only alphanumeric, no leading/trailing whitepace and single spaces
     explicit DbMakeKeywordStr(const QString& keywords);

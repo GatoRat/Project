@@ -1,3 +1,6 @@
+// This is an independent project of an individual developer. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++ and C#: http://www.viva64.com
+
 #include "stdafx.h"
 #include "MakeKeywordQuery.h"
 
@@ -51,6 +54,8 @@ static bool IsPuncNotWordEnd(const QChar& ch)
     return !IsWordEnd(ch) && ch.isPunct();
 }
 
+
+// TODO: Benchmark this to see if it really offers a real advantage
 QString SimplifyString(const QString& str, bool prependVBar)
 {
     if (str.isEmpty())
@@ -58,7 +63,7 @@ QString SimplifyString(const QString& str, bool prependVBar)
         return str;
     }
 
-    QChar* pNewStr = static_cast<QChar*>(stack_alloc((str.size() + 1) * sizeof(ushort)));
+    QChar* pNewStr = static_cast<QChar*>(stack_alloc((str.size() + 1) * sizeof(ushort))); //-V630 //-V104
     size_t newLen = 0;
 
     if (prependVBar)
@@ -97,6 +102,7 @@ QString SimplifyString(const QString& str, bool prependVBar)
     return emptyLen == newLen ? QString() : QString(pNewStr, static_cast<int>(newLen));
 }
 
+// TODO: This doesn't strip leading/trailing white space. Not even sure this is needed anymore.
 QString DbSimplifyString2(const QString& str, bool prependVBar)
 {
     QString newStr;
@@ -374,7 +380,7 @@ QString MakeKeywordQuery(const QString& keywords)
         int cleanTagLen = 0;
 
         int cleanTagDefaultLen = 1;// preferences.library.useStartsWith ? 1 : 0;
-        if (cleanTagDefaultLen)
+        if (cleanTagDefaultLen) //-V547
         {
             cleanTag[cleanTagLen++] = qvbar;
         }

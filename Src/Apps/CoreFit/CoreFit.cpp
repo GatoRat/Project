@@ -70,7 +70,7 @@ static ReturnCode DbOpen(const QStringList& /*args*/)
 
 int main(int argc, char *argv[])
 {
-    QApplication application(argc, argv);
+    [[maybe_unused]] QApplication application(argc, argv);
 
     AppInfo::SetVersion(VER_MAJOR, VER_MINOR, VER_BUILD, VER_REVISION);
     AppInfo::SetProduct(VER_COMPANYNAME_STR, VER_PRODUCTNAME_STR);

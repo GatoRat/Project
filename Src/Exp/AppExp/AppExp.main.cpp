@@ -1,3 +1,6 @@
+// This is an independent project of an individual developer. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++ and C#: http://www.viva64.com
+
 #include "stdafx.h"
 #include "AppExp.h"
 #include "Util/Misc/AppInfo.h"
@@ -28,7 +31,7 @@ static int ShowExitCode(int exitCode, bool showExitCode = true)
 
 static int Usage(int exitCode = 0)
 {
-    output  << QStringLiteral("AppExp [-?|-h] [-d<folder>] [-p] [-l[#]] [-t|-T] [test args]") << endl
+    output  << QStringLiteral("AppExp [-?|-h] [-d<folder>] [-p] [-l[#]] [-t|-T] [test args]") << endl //-V119
             << QStringLiteral("?  = show this help") << endl
             << QStringLiteral("p  = pause before exit.") << endl
             << QStringLiteral("n# = run test for specified number of loops.") << endl
@@ -134,12 +137,12 @@ int main(int argc, char *argv[])
         timer.calculate();
         if (showSeconds)
         {
-            errOut/*output*/ << QStringLiteral("Seconds: ") << totalTimer.getElapsedSeconds() << 
+            errOut/*output*/ << QStringLiteral("Seconds: ") << totalTimer.getElapsedSeconds() <<  //-V119
                       QStringLiteral(" / ") << timer.getElapsedSeconds() << endl;
         }
         else
         {
-            errOut/*output*/ << QStringLiteral("Nanoseconds: ") << totalTimer.getElapsedSeconds() << 
+            errOut/*output*/ << QStringLiteral("Nanoseconds: ") << totalTimer.getElapsedSeconds() <<  //-V119
                       QStringLiteral(" / ") << timer.getElapsedSeconds() << endl;
         }
     }
