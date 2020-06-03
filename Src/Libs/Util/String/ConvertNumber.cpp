@@ -2,6 +2,7 @@
 // PVS-Studio Static Code Analyzer for C, C++ and C#: http://www.viva64.com
 
 #include "../Misc/Defines.Misc.h"
+#include <algorithm>
 #include "ASCII.h"
 #include "Convert.h"
 #include "GetNumDigits.h"
@@ -16,7 +17,7 @@ namespace Convert
     char* ToStr(uint32_t val, char* pBuffer, char groupSeparatorChar, bool isNeg, char** pEnd)
     {
         pBuffer += groupSeparatorChar ? (isNeg ? MaxStrLen32_Commas_Signed - 1 : MaxStrLen32_Commas - 1) :
-                                        (isNeg ? MaxStrLen32_Signed - 1 : MaxStrLen32 - 1);
+                                        (isNeg ? MaxStrLen32_Signed - 1        : MaxStrLen32 - 1       );
         *pBuffer = 0;
 
         if (pEnd)
@@ -24,24 +25,31 @@ namespace Convert
             *pEnd = pBuffer;
         }
 
-        int digitGroupCount = 0;
-
-        do
+        if (val == 0)
         {
-            *--pBuffer = static_cast<char>((val % BASE_TEN) + ASCII::Zero);
-            val /= BASE_TEN;
+            *--pBuffer = ASCII::Zero;
+        }
+        else
+        {
+            int digitGroupCount = 0;
 
-            if (groupSeparatorChar && ++digitGroupCount == DigitsPerGroup && val)
+            do
             {
-                digitGroupCount = 0;
-                *--pBuffer = groupSeparatorChar;
+                *--pBuffer = static_cast<char>((val % BASE_TEN) + ASCII::Zero);
+                val /= BASE_TEN;
+
+                if (groupSeparatorChar && ++digitGroupCount == DigitsPerGroup && val)
+                {
+                    digitGroupCount = 0;
+                    *--pBuffer = groupSeparatorChar;
+                }
+
+            } while (val);
+
+            if (isNeg)
+            {
+                *--pBuffer = ASCII::Minus;
             }
-
-        } while (val);
-
-        if (isNeg)
-        {
-            *--pBuffer = ASCII::Minus;
         }
 
         return pBuffer;
@@ -56,21 +64,30 @@ namespace Convert
 
     char* ToStrAligned(uint32_t val, char* pBuffer, char groupSeparatorChar, bool isNeg, char** pEnd)
     {
-        const char* pResult = ToStr(val, pBuffer, groupSeparatorChar, isNeg, nullptr);
-        if (pResult != pBuffer)
+        if (val == 0)
         {
-            size_t i = 0;
-            do
+            pBuffer[0] = ASCII::Zero;
+            pBuffer[1] = 0;
+        }
+        else
+        {
+            const char* pResult = ToStr(val, pBuffer, groupSeparatorChar, isNeg, nullptr);
+            if (pResult != pBuffer)
             {
-                pBuffer[i] = pResult[i];
+                size_t i = 0;
+                do
+                {
+                    pBuffer[i] = pResult[i];
 
-            } while (pBuffer[i++]);
+                } while (pBuffer[i++]);
 
-            if (pEnd)
-            {
-                *pEnd = &pBuffer[i];
+                if (pEnd)
+                {
+                    *pEnd = &pBuffer[i];
+                }
             }
         }
+
         return pBuffer;
     }
 
@@ -86,7 +103,7 @@ namespace Convert
     char* ToStr64(uint64_t val, char* pBuffer, char groupSeparatorChar, bool isNeg, char** pEnd)
     {
         pBuffer += groupSeparatorChar ? (isNeg ? MaxStrLen64_Commas_Signed - 1 : MaxStrLen64_Commas - 1) :
-                                        (isNeg ? MaxStrLen64_Signed - 1 : MaxStrLen64 - 1);
+                                        (isNeg ? MaxStrLen64_Signed - 1        : MaxStrLen64 - 1       );
         *pBuffer = 0;
 
         if (pEnd)
@@ -94,29 +111,36 @@ namespace Convert
             *pEnd = pBuffer;
         }
 
-        if (isNeg && val > 9223372036854775807)
+        if (val == 0)
         {
-            val = 9223372036854775807;
+            *--pBuffer = ASCII::Zero;
         }
-
-        int digitGroupCount = 0;
-
-        do
+        else
         {
-            *--pBuffer = static_cast<char>((val % BASE_TEN) + ASCII::Zero);
-            val /= BASE_TEN;
-
-            if (groupSeparatorChar && ++digitGroupCount == DigitsPerGroup && val)
+            if (isNeg && val > 9223372036854775807)
             {
-                digitGroupCount = 0;
-                *--pBuffer = groupSeparatorChar;
+                val = 9223372036854775807;
             }
 
-        } while (val > 0);
+            int digitGroupCount = 0;
 
-        if (isNeg)
-        {
-            *--pBuffer = ASCII::Minus;
+            do
+            {
+                *--pBuffer = static_cast<char>((val % BASE_TEN) + ASCII::Zero);
+                val /= BASE_TEN;
+
+                if (groupSeparatorChar && ++digitGroupCount == DigitsPerGroup && val)
+                {
+                    digitGroupCount = 0;
+                    *--pBuffer = groupSeparatorChar;
+                }
+
+            } while (val > 0);
+
+            if (isNeg)
+            {
+                *--pBuffer = ASCII::Minus;
+            }
         }
 
         return pBuffer;
@@ -127,25 +151,22 @@ namespace Convert
         char* pEnd;
         char* pStr = ToStr64(val, pBuffer, groupSeparatorChar, isNeg, &pEnd);
 
-        int width = minWidth - static_cast<int>(pEnd - pStr);
-        if (padChar && width > 0 && pStr > pBuffer)
+        if (padChar && pStr > pBuffer)
         {
-            if (isNeg)
+            ptrdiff_t numPadChars = min(static_cast<ptrdiff_t>(minWidth) - (pEnd - pStr), pStr - pBuffer);
+            if (numPadChars > 0)
             {
-                ++width;
-                ++pStr;
-            }
+                pStr -= numPadChars;
 
-            do
-            {
-
-                *--pStr = padChar;
-
-            } while (--width > 0 && pStr > pBuffer);
-
-            if (isNeg)
-            {
-                *pStr = ASCII::Minus;
+                if (isNeg && val)
+                {
+                    memset(pStr + 1, padChar, numPadChars);
+                    *pStr = ASCII::Minus;
+                }
+                else
+                {
+                    memset(pStr, padChar, numPadChars);
+                }
             }
         }
 
@@ -166,21 +187,30 @@ namespace Convert
 
     char* ToStrAligned64(uint64_t val, char* pBuffer, char groupSeparatorChar, bool isNeg, char** pEnd)
     {
-        const char* pResult = ToStr64(val, pBuffer, groupSeparatorChar, isNeg, nullptr);
-        if (pResult != pBuffer)
+        if (val == 0)
         {
-            size_t i = 0;
-            do
+            pBuffer[0] = ASCII::Zero;
+            pBuffer[1] = 0;
+        }
+        else
+        {
+            const char* pResult = ToStr64(val, pBuffer, groupSeparatorChar, isNeg, nullptr);
+            if (pResult != pBuffer)
             {
-                pBuffer[i] = pResult[i];
+                size_t i = 0;
+                do
+                {
+                    pBuffer[i] = pResult[i];
 
-            } while (pBuffer[i++]);
+                } while (pBuffer[i++]);
 
-            if (pEnd)
-            {
-                *pEnd = &pBuffer[i];
+                if (pEnd)
+                {
+                    *pEnd = &pBuffer[i];
+                }
             }
         }
+
         return pBuffer;
     }
 
@@ -196,7 +226,7 @@ namespace Convert
         char tmpStr[MinBufferLen];
 
         char* pEnd;
-        const char* pStr = Convert::ToStr64(val, tmpStr, groupSeparatorChar, false, &pEnd);
+        const char* pStr = ToStr64(val, tmpStr, groupSeparatorChar, false, &pEnd);
 
         const size_t width = pEnd - pStr;
         if (width < minWidth)
