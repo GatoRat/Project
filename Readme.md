@@ -24,7 +24,7 @@ The libraries tend to use doxygen style comments in the headers (a few files sti
 
 
 
-- [Solution Layout](https://github.com/GatoRat/Project/blob/master/Docs/Solution Layout.md)
-- [Visual Studio Warnings](https://github.com/GatoRat/Project/blob/master/Docs/Visual Studio Warnings.txt)
+- [Solution Layout](Docs/SolutionLayout.md)
+- [Visual Studio Warnings](Docs/VisualStudioWarnings.txt)
 
 
