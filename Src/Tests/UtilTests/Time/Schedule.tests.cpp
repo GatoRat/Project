@@ -8,7 +8,7 @@
 
 using namespace std;
 
-static char* pCtor1 = R"(
+static const char* pCtor1 = R"(
 {
   "schedule":
   {

@@ -151,7 +151,7 @@ optional<uint64_t> Schedule::createScore(TimeStamp timeStamp, int dayOfWeek) con
                 if (item.isTimeValid(timeStamp, dayOfWeek))
                 {
                     uint64_t tmpScore = item.calcScore();
-                    if (!score || tmpScore < score.value())
+                    if (!score || tmpScore < *score)
                     {
                         score = tmpScore;
                     }

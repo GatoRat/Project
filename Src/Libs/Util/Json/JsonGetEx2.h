@@ -97,10 +97,10 @@ std::string JsonGetStdStringEx2(const rapidjson::GenericValue<Encoding, Allocato
 /// <exception cref="XceptionJson">Thrown if the value exists and isn't a string.</exception>
 template <typename Encoding, typename Allocator>
 std::string JsonGetStdStringEx3(const rapidjson::GenericValue<Encoding, Allocator>& value, const char* pName,
-                                std::string& default, const char* pStreamName = nullptr)
+                                std::string& defaultVal, const char* pStreamName = nullptr)
 {
     auto pStr = JsonGetStringEx3(value, pName, nullptr, pStreamName);
-    return pStr && *pStr ? std::string(pStr) : default;
+    return pStr && *pStr ? std::string(pStr) : defaultVal;
 };
 
 /// <summary>

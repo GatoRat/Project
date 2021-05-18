@@ -336,7 +336,7 @@ public:
     {
         if (val)
         {
-            keyVal(pKey, val.value());
+            keyVal(pKey, *val);
         }
     }
 
@@ -344,7 +344,7 @@ public:
     {
         if (val)
         {
-            keyVal(pKey, val.value());
+            keyVal(pKey, *val);
         }
     }
 
@@ -352,7 +352,7 @@ public:
     {
         if (val)
         {
-            keyVal(pKey, val.value());
+            keyVal(pKey, *val);
         }
     }
 
@@ -360,7 +360,7 @@ public:
     {
         if (val)
         {
-            keyVal(pKey, val.value());
+            keyVal(pKey, *val);
         }
     }
 
@@ -368,7 +368,7 @@ public:
     {
         if (val)
         {
-            keyVal(pKey, val.value());
+            keyVal(pKey, *val);
         }
     }
 
@@ -376,23 +376,23 @@ public:
     {
         if (val)
         {
-            keyVal(pKey, val.value());
+            keyVal(pKey, *val);
         }
     }
 
     void optionalKeyVal(const char* pKey, const std::optional<std::string>& str)
     {
-        if (str && !str.value().empty())
+        if (str && !str->empty())
         {
-            keyVal(pKey, str.value());
+            keyVal(pKey, *str);
         }
     }
 
     void optionalKeyVal(const char* pKey, const std::optional<std::wstring>& str)
     {
-        if (str && !str.value().empty())
+        if (str && !str->empty())
         {
-            keyVal(pKey, str.value());
+            keyVal(pKey, *str);
         }
     }
 
@@ -411,7 +411,7 @@ public:
         if (val && val != defaultVal)
         {
             Key(pKey);
-            Bool(val.value());
+            Bool(*val);
         }
     }
 
@@ -419,7 +419,7 @@ public:
     {
         if (val && val != defaultVal)
         {
-            keyVal(pKey, val.value());
+            keyVal(pKey, *val);
         }
     }
 
@@ -427,7 +427,7 @@ public:
     {
         if (val && val != defaultVal)
         {
-            keyVal(pKey, val.value());
+            keyVal(pKey, *val);
         }
     }
 
@@ -435,7 +435,7 @@ public:
     {
         if (val && val != defaultVal)
         {
-            keyVal(pKey, val.value());
+            keyVal(pKey, *val);
         }
     }
 
@@ -443,15 +443,15 @@ public:
     {
         if (val && val != defaultVal)
         {
-            keyVal(pKey, val.value());
+            keyVal(pKey, *val);
         }
     }
 
     void optionalKeyVal(const char* pKey, const std::optional<float>& val, float defaultVal)
     {
-        if (val && !Almost::Equal(val.value(), defaultVal))
+        if (val && !Almost::Equal(*val, defaultVal))
         {
-            keyVal(pKey, val.value());
+            keyVal(pKey, *val);
         }
     }
 
@@ -607,11 +607,11 @@ public:
 
     void keyVal(const char* pName, const std::optional<std::vector<uint8_t>>& data)
     {
-        if (data && !data.value().empty())
+        if (data && !data->empty())
         {
             Array jArray(pName, *this);
 
-            for (auto val : data.value())
+            for (auto val : *data)
             {
                 Uint(val);
             }

@@ -27,7 +27,7 @@ public:
      */
     XceptionFile(const fs::path& path, intptr_t code, const char* pMsg = nullptr, GetCodeStr getCodeStr = GetErrStrErrno)
         : Xception(code, pMsg, std::move(getCodeStr))
-        , _path(std::make_shared<fs::path>(path))
+        , _path(std::make_shared<fs::path>(path)) //-V1067
     {
     }
 
@@ -52,7 +52,7 @@ public:
      */
     explicit XceptionFile(const fs::path& path, const char* pMsg = nullptr, GetCodeStr getCodeStr = GetErrStrErrno)
         : Xception(static_cast<intptr_t>(errno), pMsg, std::move(getCodeStr))
-        , _path(std::make_shared<fs::path>(path))
+        , _path(std::make_shared<fs::path>(path)) //-V1067
     {
     }
 
@@ -80,7 +80,7 @@ public:
     {
         if (pPath)
         {
-            _path = std::make_shared<fs::path>(pPath);
+            _path = std::make_shared<fs::path>(pPath); //-V1067
         }
     }
 
@@ -97,7 +97,7 @@ public:
     {
         if (pPath)
         {
-            _path = std::make_shared<fs::path>(pPath);
+            _path = std::make_shared<fs::path>(pPath); //-V1067
         }
     }
 
@@ -176,7 +176,7 @@ public:
             else
             {
                 str += ": \"";
-                str += _path->u8string(); //Convert::ToStr(_path->u8string());
+                str += _path->generic_string();
                 str += '"';
             }
         }

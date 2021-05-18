@@ -51,7 +51,8 @@ struct LocaleData
         currencyFormat.NegativeOrder = GetLocaleNumInfo(LOCALE_INEGCURR);
         currencyFormat.PositiveOrder = GetLocaleNumInfo(LOCALE_ICURRENCY);
 
-        currencyFormat.lpCurrencySymbol = L"";
+        wchar_t emptyStr[1] = L"";
+        currencyFormat.lpCurrencySymbol = emptyStr;
         GetLocaleInfoW(LOCALE_USER_DEFAULT, LOCALE_SCURRENCY, currencySymbol, static_cast<int>(sizeof(currencySymbol) / sizeof(wchar_t)));
     }
 };

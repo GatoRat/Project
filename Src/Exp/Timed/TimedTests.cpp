@@ -25,53 +25,12 @@ using namespace std;
     #define OPTIMIZE_OFF
 #endif
 
-#include <map>
-#include <set>
-
-struct Data
-{
-    string type;
-    int    numActive  { 0    };
-    int    menuOrder  { 0    };
-    bool   isPromoOnly{ true };
-
-    explicit Data(const string& type_) : type(type_) {}
-
-    bool operator<(const Data& rhs) const
-    {
-        return type < rhs.type;
-    }
-};
-
-map<string, Data> types;
-vector<Data> types2;
-
-vector<bool> results1;
-
-vector<string> typeNames;
-vector<string> rawNames{ "Spin", "Match", "Punch", "Scratch", "Pick" };
-
 struct TestAll : public TimedTest
 {
     const char* GetName() override { return "All"; }
 
     bool InitTest() override
     {
-        //types["Spin"]    = Data();
-        //types["Match"]   = Data();
-        //types["Punch"]   = Data();
-        //types["Scratch"] = Data();
-        //types["Pick"]    = Data();
-
-        for (auto& s : rawNames)
-        {
-            for (int r = 0; r < 8; ++r)
-            {
-                typeNames.push_back(s);
-                results1.push_back(false);
-            }
-        }
-
         return true;
     }
 
@@ -109,18 +68,12 @@ struct Test1 : public TimedTest
 
     bool PreTest() override
     {
-        types.clear();
         return true;
     }
 
     OPTIMIZE_OFF
     void Test() override
     {
-        size_t i = 0;
-        for (auto& s : typeNames)
-        {
-            results1[i++] = types.try_emplace(s, Data(s)).second;
-        }
     }
     OPTIMIZE_ON
 
@@ -147,18 +100,12 @@ struct Test2 : public TimedTest
 
     bool PreTest() override
     {
-        types.clear();
         return true;
     }
 
     OPTIMIZE_OFF
     void Test() override
     {
-        size_t i = 0;
-        for (auto& s : typeNames)
-        {
-            results1[i++] = types.try_emplace(s, Data(s)).second;
-        }
     }
     OPTIMIZE_ON
 
@@ -185,31 +132,12 @@ struct Test3 : public TimedTest
 
     bool PreTest() override
     {
-        types.clear();
         return true;
     }
 
     OPTIMIZE_OFF
     void Test() override
     {
-        size_t i = 0;
-        for (auto& s : typeNames)
-        {
-            auto it = find_if(types2.begin(), types2.end(), [&s](const Data& data)->bool
-            {
-                return data.type == s;
-            });
-
-            if (it != types2.end())
-            {
-                results1[i++] = false;
-            }
-            else
-            {
-                results1[i++] = true;
-                types2.emplace_back(Data(s));
-            }
-        }
     }
     OPTIMIZE_ON
 
@@ -236,18 +164,12 @@ struct Test4 : public TimedTest
 
     bool PreTest() override
     {
-        types.clear();
         return true;
     }
 
     OPTIMIZE_OFF
     void Test() override
     {
-        size_t i = 0;
-        for (auto& s : typeNames)
-        {
-            results1[i++] = types.try_emplace(s, Data(s)).second;
-        }
     }
     OPTIMIZE_ON
 

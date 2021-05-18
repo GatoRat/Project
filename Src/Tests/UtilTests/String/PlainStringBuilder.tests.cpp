@@ -105,7 +105,7 @@ TEST_CASE("string/PlainStringBuilder::PlainStringBuilder")
 
         SECTION("char*, int")
         {
-            constexpr char* pData = "12345";
+            constexpr const char* pData = "12345";
             psb.append(pData, 3);
             REQUIRE(psb.getLen() == 3); //-V521
             string s(psb.str());
@@ -113,7 +113,7 @@ TEST_CASE("string/PlainStringBuilder::PlainStringBuilder")
         }
         SECTION("char*")
         {
-            constexpr char* pData = "12345";
+            constexpr const char* pData = "12345";
             psb += pData;
             REQUIRE(psb.getLen() == 5); //-V521
             REQUIRE(string_view(psb, psb.getLen()) == "12345"); //-V521

@@ -23,10 +23,10 @@ namespace ASCIIW
     constexpr wchar_t SYN   = 0x16; // Synchronous Idle
     constexpr wchar_t ESC   = 0x1b;
 
-    constexpr wchar_t* pTAB    = L"\t";
-    constexpr wchar_t* pCR     = L"\r";
-    constexpr wchar_t* pLF     = L"\n";
-    constexpr wchar_t* pCRLF   = L"\r\n";
+    constexpr const wchar_t* pTAB    = L"\t";
+    constexpr const wchar_t* pCR     = L"\r";
+    constexpr const wchar_t* pLF     = L"\n";
+    constexpr const wchar_t* pCRLF   = L"\r\n";
 
     constexpr wchar_t Accent           = L'`';
     constexpr wchar_t Ampersand        = L'&';

@@ -28,7 +28,7 @@ TEST_CASE("Misc/Xception")
 
         stringstream ss;
         ss << e;
-        string result(ss.str());
+        const string result(ss.str());
         REQUIRE(result == "1: One"); //-V521
     }
     SECTION("ctor(intptr_t code, const string& msg, GetErrStrTest)")
@@ -45,7 +45,7 @@ TEST_CASE("Misc/Xception")
 
         stringstream ss;
         ss << e;
-        string result(ss.str());
+        const string result(ss.str());
         REQUIRE(result == "1: One"); //-V521
     }
     SECTION("ctor(intptr_t code)")
@@ -61,7 +61,7 @@ TEST_CASE("Misc/Xception")
 
         stringstream ss;
         ss << e;
-        string result(ss.str());
+        const string result(ss.str());
         REQUIRE(result == "1"); //-V521
     }
     SECTION("ctor(intptr_t code, const char* pMsg, nullptr)")
@@ -78,7 +78,7 @@ TEST_CASE("Misc/Xception")
 
         stringstream ss;
         ss << e;
-        string result(ss.str());
+        const string result(ss.str());
         REQUIRE(result == "1: One"); //-V521
     }
     SECTION("ctor(intptr_t code, const string& msg, nullptr)")
@@ -95,7 +95,7 @@ TEST_CASE("Misc/Xception")
 
         stringstream ss;
         ss << e;
-        string result(ss.str());
+        const string result(ss.str());
         REQUIRE(result == "1: One"); //-V521
     }
 }

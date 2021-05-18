@@ -8,9 +8,9 @@
 using namespace std;
 
 #ifdef _WIN32
-    constexpr wchar_t* pExtDot = L".";
+    constexpr const wchar_t* pExtDot = L".";
 #else
-    constexpr char* pExtDot = ".";
+    constexpr const char* pExtDot = ".";
 #endif
 
 constexpr size_t CountBufferLen = 7;

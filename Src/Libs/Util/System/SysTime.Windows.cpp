@@ -36,7 +36,7 @@ TimeStamp GetSysTime(bool local, int* pDayOfWeek)
     return timeStamp;
 }
 
-constexpr wchar_t* pLongDateFormat[2]
+constexpr const wchar_t* pLongDateFormat[2]
 {
     L"ddd MMM d',' yyyy",
     L"MMM d',' yyyy"

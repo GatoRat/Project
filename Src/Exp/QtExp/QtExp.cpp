@@ -11,8 +11,8 @@ int main(int argc, char *argv[])
 	QCoreApplication application(argc, argv);
 
 	QCoreApplication::setApplicationVersion("0.1.2.3");
-	QCoreApplication::setOrganizationDomain("gamingarts.com");
-	QCoreApplication::setOrganizationName("Gaming Arts, LLC");
+	QCoreApplication::setOrganizationDomain("");
+	QCoreApplication::setOrganizationName("Joe Woodbury");
 
 
     QTime t;

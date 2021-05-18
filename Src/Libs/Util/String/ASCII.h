@@ -28,10 +28,10 @@ namespace ASCII
     //extern const char* pLF;
     //extern const char* pCRLF;
 
-    constexpr char* pTAB    = "\t";
-    constexpr char* pCR     = "\r";
-    constexpr char* pLF     = "\n";
-    constexpr char* pCRLF   = "\r\n";
+    constexpr const char* pTAB    = "\t";
+    constexpr const char* pCR     = "\r";
+    constexpr const char* pLF     = "\n";
+    constexpr const char* pCRLF   = "\r\n";
 
     constexpr char Accent           = '`';
     constexpr char Ampersand        = '&';

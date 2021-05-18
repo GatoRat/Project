@@ -34,7 +34,7 @@ T* FisherYatesShuffle(T* pData, uint32_t dataLen)
             uint32_t j = RandBetweenUint32(0, i);
             if (i != j)
             {
-                swap(pData[i], pData[j]); //-V108
+                std::swap(pData[i], pData[j]); //-V108
             }
         }
     }

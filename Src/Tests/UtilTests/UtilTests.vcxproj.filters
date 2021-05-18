@@ -164,6 +164,9 @@
     <ClCompile Include="String\ConvertNumberW.tests.cpp">
       <Filter>String</Filter>
     </ClCompile>
+    <ClCompile Include="Json\JsonWriter.tests.cpp">
+      <Filter>Json</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Time">

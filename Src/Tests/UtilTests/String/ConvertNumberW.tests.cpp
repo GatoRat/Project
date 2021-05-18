@@ -17,7 +17,7 @@ TEST_CASE("Util/ConvertW[Number]::ToStr")
             bool isNegative;
             struct
             {
-                wchar_t* pStr;
+                const wchar_t* pStr;
             } expected;
         }
         data[] =
@@ -49,7 +49,7 @@ TEST_CASE("Util/ConvertW[Number]::ToStr")
             bool isNegative;
             struct
             {
-                wchar_t* pStr;
+                const wchar_t* pStr;
             } expected;
         }
         data[] =
@@ -81,7 +81,7 @@ TEST_CASE("Util/ConvertW[Number]::ToStr")
             wchar_t groupSeparator;
             struct
             {
-                wchar_t* pStr;
+                const wchar_t* pStr;
             } expected;
         }
         data[] =
@@ -113,12 +113,12 @@ TEST_CASE("Util/ConvertW[Number]::ToStr")
         {
             uint64_t val;
             wchar_t groupSeparator;
-            bool isNegative;
-            int  width;
+            bool    isNegative;
+            int     width;
             wchar_t padChar;
             struct
             {
-                wchar_t* pStr;
+                const wchar_t* pStr;
             } expected;
         }
         data[] =
@@ -179,7 +179,7 @@ TEST_CASE("Util/ConvertW[Number]::AppendFixedFast")
             size_t width;
             struct
             {
-                wchar_t* pStr;
+                const wchar_t* pStr;
             } expected;
         }
         data[]
@@ -232,7 +232,7 @@ TEST_CASE("Util/ConvertW[Number]::ToStrFixedFast")
             size_t width;
             struct
             {
-                wchar_t* pStr;
+                const wchar_t* pStr;
             } expected;
         }
         data[]

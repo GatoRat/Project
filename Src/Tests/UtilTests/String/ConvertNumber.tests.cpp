@@ -17,7 +17,7 @@ TEST_CASE("Util/Convert[Number]::ToStr")
             bool isNegative;
             struct
             {
-                char* pStr;
+                const char* pStr;
             } expected;
         }
         data[] =
@@ -49,7 +49,7 @@ TEST_CASE("Util/Convert[Number]::ToStr")
             bool isNegative;
             struct
             {
-                char* pStr;
+                const char* pStr;
             } expected;
         }
         data[] =
@@ -81,7 +81,7 @@ TEST_CASE("Util/Convert[Number]::ToStr")
             char groupSeparator;
             struct
             {
-                char* pStr;
+                const char* pStr;
             } expected;
         }
         data[] =
@@ -118,7 +118,7 @@ TEST_CASE("Util/Convert[Number]::ToStr")
             char padChar;
             struct
             {
-                char* pStr;
+                const char* pStr;
             } expected;
         }
         data[] =
@@ -181,7 +181,7 @@ TEST_CASE("Util/Convert[Number]::AppendFixedFast")
             size_t width;
             struct
             {
-                char* pStr;
+                const char* pStr;
             } expected;
         }
         data[]
@@ -234,7 +234,7 @@ TEST_CASE("Util/Convert[Number]::ToStrFixedFast")
             size_t width;
             struct
             {
-                char* pStr;
+                const char* pStr;
             } expected;
         }
         data[]

@@ -7,8 +7,10 @@
 using namespace std;
 
 // Note: this file is saved as UTF-8, do not change this.
-static const char test_str[] = u8"ぬるを";
+static const char8_t test_str8[] = u8"ぬるを";
 static const wchar_t test_wstr[] = L"ぬるを";
+
+static const char* test_str = reinterpret_cast<const char*>(test_str8);
 
 TEST_CASE("string/Convert::ToStr(const wchar_t*)")
 {

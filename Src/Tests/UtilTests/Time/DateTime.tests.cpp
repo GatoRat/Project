@@ -93,7 +93,7 @@ TEST_CASE("DateTime")
     }
     SECTION("reset(const char* pStr, Precision Precision)")
     {
-        static char* pFull = "2017-12-19 12:15:30.123456";
+        static const char* pFull = "2017-12-19 12:15:30.123456";
         DateTime::Precision precision = DateTime::Precision::Year;
 
         DateTime dateTime(_tm, 16345678);
