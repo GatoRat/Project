@@ -91,7 +91,7 @@ static void SetPaths(size_t basePathRemoveCount)
     programDataPath = SysGetPath::ProgramData();
 }
 
-void InitDirectories(vector<wstring>& args, const wchar_t* pDocSubdir, size_t basePathRemoveCount)
+void InitDirectories(vector<wstring>& args, const wchar_t* pDocSubdir, size_t basePathRemoveCount) //-V826
 {
     for (auto it = args.begin(); it != args.end();)
     {
@@ -119,7 +119,7 @@ void InitDirectories(vector<wstring>& args, const wchar_t* pDocSubdir, size_t ba
     SetPaths(basePathRemoveCount);
 }
 
-void InitDirectories(vector<string>& args, const char* pDocSubdir, size_t basePathRemoveCount)
+void InitDirectories(vector<string>& args, const char* pDocSubdir, size_t basePathRemoveCount) //-V826
 {
     for (auto it = args.begin(); it != args.end();)
     {

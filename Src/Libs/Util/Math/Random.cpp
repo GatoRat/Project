@@ -7,7 +7,7 @@
 
 using namespace std;
 
-static mt19937 randEngine;
+static mt19937 randEngine; //-V1057
 static bool seeded = false;
 
 void RandSeed()
