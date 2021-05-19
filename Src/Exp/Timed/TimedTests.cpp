@@ -1,6 +1,7 @@
 // This is an independent project of an individual developer. Dear PVS-Studio, please check it.
 // PVS-Studio Static Code Analyzer for C, C++ and C#: http://www.viva64.com
 
+#include <lz4/lz4.h>
 #include <filesystem>
 #include <iostream>
 #include <string>
@@ -24,6 +25,9 @@ using namespace std;
     #undef  OPTIMIZE_OFF
     #define OPTIMIZE_OFF
 #endif
+
+extern const char* pWords[];
+extern size_t numWords;
 
 struct TestAll : public TimedTest
 {

@@ -23,6 +23,7 @@
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
+    <EnableASAN>true</EnableASAN>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -104,6 +105,9 @@
     <ClCompile Include="Words.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\ThirdParty\lz4\lz4.vcxproj">
+      <Project>{8223a9c4-8424-4f63-9cd0-af9b603713dd}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\..\Libs\Util\Util.vcxproj">
       <Project>{851e38b1-8af4-4ccc-a90d-3491c66a2259}</Project>
     </ProjectReference>

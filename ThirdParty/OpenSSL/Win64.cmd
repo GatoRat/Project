@@ -4,7 +4,7 @@ setlocal
 set ORG_DIR=%~dp0
 rem goto copyFiles
 
-call "%ProgramFiles(x86)%\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat" x86_amd64
+call "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat" x86_amd64
 set PATH=%CD%;%PATH%
 if exist Build rmdir /s /q Build
 md Build
@@ -21,7 +21,6 @@ perl -p ^
 	-e "s/-Gy//;" ^
 	-e "s/-GF//;" ^
 	-e "s/\/opt:ref/\/opt:ref \/opt:icf \/ltcg/;" ^
-	-e "s/-1_1-x64//g;" ^
 	makefile.org > makefile
 
 nmake -f makefile
@@ -32,14 +31,14 @@ cd %ORG_DIR%
 if not exist bin md bin
 if not exist lib md lib
 
-copy /y Build\libcrypto.lib lib\libcrypto.lib
-copy /y Build\libcrypto.dll bin\libcrypto.dll
+copy /y Build\libcrypto.lib         lib\libcrypto.lib
+copy /y Build\libcrypto-1_1-x64.dll bin\libcrypto-1_1-x64.dll
 
-copy /y Build\libssl.lib lib\libssl.lib
-copy /y Build\libssl.dll bin\libssl.dll
+copy /y Build\libssl.lib         lib\libssl.lib
+copy /y Build\libssl-1_1-x64.dll bin\libssl-1_1-x64.dll
 
-robocopy src\include include /s /purge /xo /fft /xa:SHTO /xf opensslconf.h
-copy /y Build\include\openssl\opensslconf.h include\openssl\opensslconf.h
+robocopy src\include\openssl openssl /s /purge /xo /fft /xa:SHTO /xf opensslconf.h
+copy /y Build\include\openssl\opensslconf.h openssl\opensslconf.h
 
 echo.
 

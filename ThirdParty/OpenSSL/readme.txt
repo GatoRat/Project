@@ -19,6 +19,9 @@ OpenSSL for Windows platform
 3) Copy nasm.exe to folder.
 4) Open a Command Prompt.
 5) Run the proper command file
+   Note: Ignore the notice that nmake is not in path. (It seems that perl generates this erroneous message.
+                                                       It happens around line 1156 of configure and I have
+                                                       no idea what that code is doing.)
 
 
 OpenSSL for Mac platform
