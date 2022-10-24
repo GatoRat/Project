@@ -1,16 +1,18 @@
 # Project Solution Layout
 
-The Project solution layout is designed to keep source files, support files and build files organized and separated. Typically, there are three main "controlled" directories at the base level, though more may be added as needed: **Docs**, **Install**, **Src** and **ThirdParty**. There are three temporary directories: **Build**, **.vs**, **Debug** and, if used, the **.git** directory.
+The Project solution layout is designed to keep source files, support files and build files organized and separated. Typically, there are four main "controlled" directories at the base level, though more may be added as needed: **Docs**, **Install**, **Src** and **ThirdParty**. There are three or four temporary directories: **Build**, **Debug**, **.vs** and, if used, **.git**.
 
 IDEs and source control may create additional temporary directories.
 
 ## Docs
 
-Contains documents related to the solution and/or application. For example, it may contain a help project. This is kept separate from **Src** since a writer may need access to it and not the other directories. It also keeps directories, especially the base directory, from being littered with files.
+Contains documents related to the solution and/or application. For example, it may contain a help project. This is kept separate from **Src** since a writer may need access to it and not the other directories. It also keeps other directories, especially the base directory, from being littered with files.
 
 ## Install
 
-Contains installation scripts and files. Since the installation for projects varies widely, the contents of this directory haven't been standardized. Currently, NSIS is planned to be used for installers.
+Contains installation scripts and files. Since the installation for projects varies widely, the contents of this directory haven't been standardized. In the past, NSIS was used as the installer.
+
+> All recent projects used an "xcopy install".
 
 ## Build
 
@@ -24,7 +26,7 @@ Under Build there will be a list of target platforms with Debug and Release dire
 
 **Build/\<target\>/Release**
 
-The final executables, including DLLs unique to the project, will be in a **bin** directory underneath each of these. The project will copy stored DLLs and *some* resources into this same directory. In some cases, to debug from this folder, the active directory needs to be one containing config and/or registration files and possibly large assets. The application should make accommodation for these being in different folders.
+The final executables, including DLLs unique to the project, will be in a **bin** directory underneath each of these. The project will copy stored DLLs and *some* resources into this same directory. In some cases, to debug from this folder, the active directory needs to be one containing config and/or registration files and possibly large assets. The application should accommodate for these being in different folders.
 
 One unresolved issue is dealing with large files which may be required for testing. Typically, the unit tests generate the files needed and writes them to temporary folders. However, in some circumstances, this may not be practical or possible. If this happens, for now store the original files under the associated test project directory and then have Visual Studio copy them to **bin/test**. 
 
@@ -34,7 +36,7 @@ One unresolved issue is dealing with large files which may be required for testi
 
 ## .vs
 
-Created by Visual Studio and contains Intellisense and other files. This is *not* saved in source control and can, and should , be periodically deleted.
+Created by Visual Studio and contains Intellisense and other files. This is *not* saved in source control and can, and should, be periodically deleted.
 
 > Visual Studio Intellisence sometimes stops working, especially when doing heavy refactoring. Closing and restarting Visual Studio often fixes the problem. If not, close the solution, navigate into the .vs directory and then down to a folder containing .suo and .db files. Delete *all* but the .suo file. (If you don't want to preserve session settings and some user options, such as breakpoints, delete the entire .vs folder.)
 
@@ -50,7 +52,7 @@ Visual Studio has a longstanding quirk where it sometimes automatically creates 
 
 As its name signifies, the **Src** directory contains the solution's source code. In turn, it contains the sub-directories: **Apps**, **Exp**, **Libs**, **Tests** and **Utils**.
 
-> For the applications that use MFC, if the appropriate runtimes are not installed on a system, the VC_redist.x64.exe installer must be run. (Once installed, it will be updated with Windows updates.)
+> For applications that use MFC, if the appropriate runtimes are not installed on a system, the VC_redist.x64.exe installer must be run. (Once installed, it will be updated with Windows updates.)
 
 If an application uses Qt, the Qt dlls will be included with the application installer.
 
@@ -58,7 +60,7 @@ If an application uses Qt, the Qt dlls will be included with the application ins
 
 Contains applications which will be "shipped" or used internally. Currently the contents are:
 
-**Src/Apps/CoreFit** is project started to support my daughter's business and can be used as the basis for a Qt application. This uses an outdated programming style and would need to  be updated.
+> **Src/Apps/CoreFit** is a project I started to support my daughter's business and can be used as the basis for a Qt application. This uses an outdated programming style and an old version of Qt, so would need to be updated.
 
 ### Src/Exp
 
@@ -141,7 +143,7 @@ Copy an existing project which uses the same type of target and then change GUID
 
 This is a minimalist list of standards. A more comprehensive document may follow.
 
-1. Use C++17 (C++20 made a blunder with char8_t and broke C++17 with several third party libraries, especially Qt.)
+1. Use C++17 (C++20 made a blunder with char8_t and broke C++17 with several third party libraries, especially Qt. This may have been resolved.)
 2. Set tabs to four spaces and use spaces.
 3. The "Allman" style of formatting is used--this is the default for Visual Studio.
 4. Lines should not exceed 128 characters, with 160 characters being a hard limit.
