@@ -1,14 +1,6 @@
 # Project Solution Layout
 
-The Project solution layout is designed to keep source files, support files and build files organized and separated. Its basic concepts date back to 1995 (small portions of the Util library also date back to that time.) The underlying design principle has always been to ensure that unit testing is easier *and* uses the same compilation as the application.
-
-By 2013, it became apparent that most of an application's code could be built and tested as libraries. Save for two changes, the current design was used in 2013 for a cross-platform Qt application. The two big changes since then were to move all project directories under a single Src directory and to separate the unit tests into its own directory tree.
-
-> A large project I worked on in 2015 reinforced this view; in order to work with the Visual Studio testing framework, most of the application was recompiled as a DLL. While this worked, there was a continued concern that some code paths were different between the DLL and the application (until I fixed it, the projects had mismatched compiler settings, so the code *was* different between the two.) It also doubled the time of an already very long build.
-
-> One advantage of having a single solution which builds so many projects is that if a library changes in a way which would render a high level project uncompilable, this is caught immediately.
-
-Typically, there are three main "controlled" directories at the base level, though more may be added as needed: **Docs**, **Install**, **Src** and **ThirdParty**. There are three temporary directories: **Build**, **.vs**, **Debug** and, if used, the **.git** directory.
+The Project solution layout is designed to keep source files, support files and build files organized and separated. Typically, there are three main "controlled" directories at the base level, though more may be added as needed: **Docs**, **Install**, **Src** and **ThirdParty**. There are three temporary directories: **Build**, **.vs**, **Debug** and, if used, the **.git** directory.
 
 IDEs and source control may create additional temporary directories.
 
